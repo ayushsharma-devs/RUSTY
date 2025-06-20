@@ -1,0 +1,1227 @@
+User: remember my name is shweta
+Rusty: Got it. I�ll remember that my name is shweta.
+
+User: what is my name
+Rusty: Got it. I�ll remember that my name is shweta.
+
+User: forget my name
+Rusty: Got it. I�ll remember that my name is shweta.
+
+User: what is my name
+Rusty: Got it. I�ll remember that my name is shweta.
+
+User: exit
+Rusty: Got it. I�ll remember that my name is shweta.
+
+User: what is my name
+Rusty: Voice has been turned off.
+
+User: remember my name is ay
+Rusty: Got it. I�ll remember that my name is ay.
+
+User: what ise my name
+Rusty: Got it. I�ll remember that my name is ay.
+
+User: what is my name
+Rusty: Got it. I�ll remember that my name is ay.
+
+User: forget my
+Rusty: Got it. I�ll remember that my name is ay.
+
+User: forget my name
+Rusty: Got it. I�ll remember that my name is ay.
+
+User: remember my name is srishti
+Rusty: Got it. I�ll remember that my name is srishti.
+
+User: forget my name
+Rusty: Got it. I�ll remember that my name is srishti.
+
+User: remember your name is rust
+Rusty: Got it. I�ll remember that your name is rust.
+
+User: what is your name
+Rusty: Got it. I�ll remember that your name is rust.
+
+User: list memory
+Rusty: Got it. I�ll remember that your name is rust.
+
+User: exit
+Rusty: Got it. I�ll remember that your name is rust.
+
+User: what ise my name
+Rusty: I don�t remember anything about e my name.
+
+User: remember my name is ayush
+Rusty: Got it. I�ll remember that my name is ayush.
+
+User: what is my name
+Rusty: ayush
+
+User: clear memory
+Rusty: All memory cleared.
+
+User: list memory
+Rusty: I don�t have anything in memory yet.
+
+User: exit
+Rusty: Bye. Rusty out.
+
+User: remember my name is ayush
+Rusty: Got it. I�ll remember that my name is ayush.
+
+User: what is my name
+Rusty: ayush
+
+User: exit
+Rusty: Bye. Rusty out.
+
+User: exit
+Rusty: Bye. Rusty out.
+
+User: open notepad
+Rusty: Opening Notepad.
+
+User: exit
+Rusty: Bye. Rusty out.
+
+User: open spotify
+Rusty: Opening Spotify.
+
+User: open opera
+Rusty: Opening Opera.
+
+User: open spotify
+Rusty: Opening Spotify.
+
+User: everest ko bolo open notepad
+Rusty: ⚠️ I couldn’t find an app called 'everest ko bolo  notepad'.
+
+User: open notepad
+Rusty: Opening Notepad.
+
+User: open spotify
+Rusty: ✅ Opening Spotify.
+
+User: close spotify
+Rusty: ✅ Closed Spotify.
+
+User: close photo close notepad
+Rusty: ✅ Closed Notepad.
+
+User: close tas
+Rusty: ❌ Couldn't find task running.
+
+User: close task manager
+Rusty: ❌ Couldn't find AppManager running.
+
+User: close opera
+Rusty: ✅ Closed opera.
+
+User: exit
+Rusty: Bye. Rusty out.
+
+User: can you open spotify
+Rusty: ✅ Opening Spotify.
+
+User: can you close whatsapp for me
+Rusty: ⚠️ Couldn't find anything matching 'can you  whatsapp for me'.
+
+User: can you close
+Rusty: ❌ Couldn't find nano running.
+
+User: can you close spotify for me
+Rusty: ⚠️ Couldn't find anything matching 'can you  spotify for me'.
+
+User: close spotify
+Rusty: ✅ Closed Spotify.
+
+User: open discord
+Rusty: ✅ Opening Discord.
+
+User: open spotify
+Rusty: ✅ Opening Spotify.
+
+User: 6 minut mein papa ji per
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: open spotify.
+Rusty: ✅ Opening Spotify.
+
+User: can you...
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: can you open this call?
+Rusty: ⚠️ Couldn't find anything matching 'can you  this call?'.
+
+User: can you open this call?
+Rusty: ⚠️ Couldn't find anything matching 'can you  this call?'.
+
+User: can you open this call?
+Rusty: ⚠️ Couldn't find anything matching 'can you  this call?'.
+
+User: can you close the door?
+Rusty: ⚠️ Couldn't find anything matching 'can you  the door?'.
+
+User: can you close spotify?
+Rusty: ✅ Closed Spotify.
+
+User: can you open spotify?
+Rusty: ✅ Opening Spotify.
+
+User: exit.
+Rusty: ⚠️ Couldn't find anything matching 'exit.'.
+
+User: oh, stop.
+Rusty: ⚠️ Couldn't find anything matching 'oh, stop.'.
+
+User: i held up my hand so i have spoken 45 minutes and with the closing for days.
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: opens fortify.
+Rusty: ✅ Opening Spotify.
+
+User: for what? for pin whatsapp.
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: so, pin what's up? we know you're upset, but the closing is in four days.
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: open what's up.
+Rusty: ✅ Opening WhatsApp.
+
+User: can you close spotify for me?
+Rusty: ⚠️ Couldn't find anything matching 'can you  spotify for me?'.
+
+User: can you close spotify?
+Rusty: ✅ Closed Spotify.
+
+User: okay.
+Rusty: I'm not sure what you meant. Try again.
+
+User: what is your name? shmeha?
+Rusty: I don’t remember anything about your name? shmeha?.
+
+User: open spotify.
+Rusty: ✅ Opening Spotify.
+
+User: close spotify.
+Rusty: ✅ Closed Spotify.
+
+User: open spotify.
+Rusty: ✅ Opening Spotify.
+
+User: open discord.
+Rusty: ✅ Opening Discord.
+
+User: on all.
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: i'm going to play a video of rusty's speech.
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: okay, he's both of you there.
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: what can you do?
+Rusty: Sorry, there was an error with the AI model: 
+
+You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+
+User: what do you remember?
+Rusty: Please say something like 'remember my name is Rusty'
+
+User: remember my name is rusty.
+Rusty: Got it. I’ll remember that my name is rusty..
+
+User: what do you remember?
+Rusty: Please say something like 'remember my name is Rusty'
+
+User: exit.
+Rusty: ⚠️ Couldn't find anything matching 'exit.'.
+
+User: hello, everyone. i'm rusty. i'm an ai assistant. i'm a
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: he's going to be talking about the ai.
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: i'm sorry.
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: what is my name?
+Rusty: I don’t remember anything about my name?.
+
+User: what is your name?
+Rusty: I don’t remember anything about your name?.
+
+User: what do you remember?
+Rusty: Please say something like 'remember my name is Rusty'
+
+User: list memory.
+Rusty: my name is rusty.
+
+User: exit.
+Rusty: ⚠️ Couldn't find anything matching 'exit.'.
+
+User: sean.
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: open discord.
+Rusty: ✅ Opening Discord.
+
+User: close discord.
+Rusty: ✅ Closed Discord.
+
+User: i'm going to talk to you about the ai assistant.
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: what is my name?
+Rusty: I don’t remember anything about my name?.
+
+User: what is my name?
+Rusty: I don’t remember anything about my name?.
+
+User: clear memory.
+Rusty: All memory cleared.
+
+User: what is my name?
+Rusty: I don’t remember anything about my name.
+
+User: what is your name?
+Rusty: I don’t remember anything about your name.
+
+User: remember, my name is rusty.
+Rusty: Got it. I’ll remember that , my name is rusty..
+
+User: what is my name?
+Rusty: I don’t remember anything about my name.
+
+User: open spotify.
+Rusty: ✅ Opening Spotify.
+
+User: open up, eric.
+Rusty: ⚠️ Couldn't find anything matching 'up, eric.'.
+
+User: open opera.
+Rusty: ✅ Opening opera.
+
+User: open vs code.
+Rusty: ✅ Opening Code.
+
+User: insert building, insert professor. at 6 o'clock. i literally never told the manager.
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: open spotify.
+Rusty: ✅ Opening Spotify.
+
+User: thanks for the... ...check out the services.
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: the slow spot of ai is...
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: open whatsapp.
+Rusty: ✅ Opening WhatsApp.
+
+User: close portafines.
+Rusty: ⚠️ Couldn't find anything matching 'portafines.'.
+
+User: close, spotify.
+Rusty: ✅ Closed Spotify.
+
+User: open spotify.
+Rusty: ✅ Opening Spotify.
+
+User: it's in the bottom. okay, so she's in. rusty durchaus.
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: i can see somebody in the front window, it's my favourite assistant right here.
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: what do you remember?
+Rusty: Please say something like 'remember my name is Rusty'
+
+User: in the birth of my name is aish.
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: i don't remember my name is irish.
+Rusty: Got it. I’ll remember that i don't  my name is irish..
+
+User: what is my name?
+Rusty: I don’t remember anything about my name?.
+
+User: forget i don't mind.
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: forget i don't mind.
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: remember, my name is iu shoes.
+Rusty: Got it. I’ll remember that , my name is iu shoes..
+
+User: remember, my name is hayouj.
+Rusty: Got it. I’ll remember that , my name is hayouj..
+
+User: remember, my name is ayun shaz.
+Rusty: Got it. I’ll remember that , my name is ayun shaz..
+
+User: remember, my name is ayush.
+Rusty: Got it. I’ll remember that , my name is ayush..
+
+User: what is my name?
+Rusty: I don’t remember anything about my name?.
+
+User: open
+Rusty: ⚠️ Couldn't find anything matching ''.
+
+User: play believer by imagine travels
+Rusty: Playing Believer (feat. Lil Wayne) by Imagine Dragons
+
+User: boom
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: im going to start with a video
+Rusty: ⚠️ Couldn't find anything matching 'im going to start with a video'.
+
+User: open spotify
+Rusty: ✅ Opening Spotify.
+
+User: please be aware by my address
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: play believer by imagined dragons
+Rusty: Playing Believer by Imagine Dragons
+
+User: how do you get my day
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: im already done youre not done yet now tell him
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: thank you
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: i am a computer scientist
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: play summer of 69 by brian adams
+Rusty: Playing Summer of 69 (Originally Performed By Brian Adams) [Full Vocal Version] by Session Allstars
+
+User: hello there
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: resume music
+Rusty: Resuming playback.
+
+User: uh skip song
+Rusty: Skipping to next track.
+
+User: this is a conversation with an englishspeaking ai assistant named rusty
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: skip song
+Rusty: Skipping to next track.
+
+User: it is the um
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: im playing nanchaku by scythemog
+Rusty: Playing Ultraviolet by Ben Wolf
+
+User: play nanchatu
+Rusty: Playing Nallanchu Thellacheera (From "Mr. Bachchan") by Sreerama Chandra
+
+User: play nanchaku by siddhemoth
+Rusty: Playing Nanchaku by Seedhe Maut
+
+User: hi im rusty
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: pause
+Rusty: Playback paused.
+
+User: it is you
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: resume
+Rusty: Resuming playback.
+
+User: next
+Rusty: Skipping to next track.
+
+User: resume
+Rusty: Resuming playback.
+
+User: bye
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: pop pop
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: uh please no
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: lets get started
+Rusty: ✅ Opening restarter.
+
+User: uh we
+Rusty: Sorry, there was an error with the AI model: 
+
+You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+
+User: play ballads 1
+Rusty: Playing SLOW DANCING IN THE DARK by Joji
+
+User: im sorry
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: next
+Rusty: Skipping to next track.
+
+User: play like songs
+Rusty: Playing playlist: Liked songs (Hindi) 
+
+User: play liked
+Rusty: Playing playlist: My likes ❤
+
+User: play seethamot all songs
+Rusty: Something went wrong trying to play that playlist.
+
+User: please see them out all songs
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: please see them all songs
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: they see them at all songs
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: play cthemort allsongs
+Rusty: Playing playlist: C.Songs
+
+User: play seed mod and
+Rusty: Playing playlist: Punk and Alternative Rock
+
+User: play seed he moth all songs
+Rusty: Something went wrong trying to play that playlist.
+
+User: please see the mark all songs
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: play red
+Rusty: Playing playlist: RAID 2 All Songs 🔥| NASHA  Raid 2 💕 | Money Money ❤️‍🔥 | Emraan Hashmi Songs | Emran Hashmi Hits
+
+User: play goodbye and good riddance
+Rusty: Playing playlist: Goodbye and Good Riddance (original lineup)
+
+User: next
+Rusty: Skipping to next track.
+
+User: next
+Rusty: Skipping to next track.
+
+User: next next
+Rusty: Skipping to next track.
+
+User: next
+Rusty: Skipping to next track.
+
+User: thank you
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: late al91 fm
+Rusty: Sorry, there was an error with the AI model: 
+
+You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+
+User: this is a conversation with an englishspeaking ai assistant named rusty
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: play dl91sm
+Rusty: Playing playlist: DL91 FM - SEEDHE MAUT
+
+User: this is a conversation with an englishspeaking ai assistant named rusty
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: im going to be back
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: mute
+Rusty: Muted audio
+
+User: increase volume
+Rusty: Increased volume to 10%.
+
+User: increase volume
+Rusty: Increased volume to 20%.
+
+User: in 3 volume
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: set volume 200
+Rusty: Volume must be between 0 and 100.
+
+User: set volume 100
+Rusty: Volume set to 100%.
+
+User: shut up
+Rusty: Playback paused.
+
+User: im sorry im sorry
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: in this song ill have it ah ill have it in this song
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: whats that its a funny dude
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: please please
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: play songs from dink
+Rusty: Playing playlist: dinklovee (radio edit) 
+
+User: please songstrum dele
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: play songs from dill
+Rusty: Playing playlist: RAID 2 All Songs 🔥| NASHA  Raid 2 💕 | Money Money ❤️‍🔥 | Emraan Hashmi Songs | Emran Hashmi Hits
+
+User: im going to show you how to do it
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: chaban sonia
+Rusty: Sorry, there was an error with the AI model: 
+
+You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+
+User: place dhumuswala
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: im going to play this game
+Rusty: Playing playlist: Game day
+
+User: shut up
+Rusty: Playback paused.
+
+User: بلی باتیں باہ 또یان شخب
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: प्लेद बातिं बाई सुर्यान्श्पर्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्ट्
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: play bhatim by suryansh bhatt matters
+Rusty: Something went wrong trying to play that playlist.
+
+User: open spotify
+Rusty: ✅ Opening Spotify.
+
+User: play batim by suryansh fatima
+Rusty: Something went wrong trying to play that playlist.
+
+User: play baate by suryanj
+Rusty: Something went wrong trying to play that playlist.
+
+User: clay nanja
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: play nunchaku
+Rusty: Something went wrong trying to play that playlist.
+
+User: play nanchaku
+Rusty: Something went wrong trying to play that playlist.
+
+User: play lunch break
+Rusty: Something went wrong trying to play that playlist.
+
+User: play lunch break by siddhi motu
+Rusty: Playing: Broken Clocks by SZA
+
+User: this is a conversation with an englishspeaking ai assistant named rusty
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: play lunch break by cdmot
+Rusty: Playing: Broken Clocks by SZA
+
+User: this is a conversation with an englishspeaking ai assistant named rusty
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: play sociopath by american red cross
+Rusty: Playing: Secular Song in Celebration of the 25th of December by Dan Bull
+
+User: place sociopath by american dead grou
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: place sociopathoamerican dead crows
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: play mrs
+Rusty: Playing: Tu Hain Toh (From "Mr. And Mrs. Mahi") by Bunny
+
+User: one fifty five doh bychegar
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: pause
+Rusty: Playback paused.
+
+User: play dumb blood
+Rusty: Playing: Dumb Blood by Soft
+
+User: play dumb ladge
+Rusty: Playing: Dumb by UNB
+
+User: playdump ledke
+Rusty: Playing: Dumb Ladke by Frappe Ash
+
+User: so im going to talk about my friend rusty
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: play ballads 1
+Rusty: Playing: SLOW DANCING IN THE DARK by Joji
+
+User: tell me a joke
+Rusty: Sorry, there was an error with the AI model: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+
+User: play my like songs
+Rusty: Playing: My Life Be Like by Parmish Verma
+
+User: play my liked songs
+Rusty: Playing: Ooh Ahh (My Life Be Like) [feat. Tobymac] by Grits
+
+User: play liked songs
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: play liked songs
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: play my like songs
+Rusty: Playing: My Life Be Like by Parmish Verma
+
+User: im going to show you how to do it
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: play songs by sidhu musewala
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: play
+Rusty: Something went wrong trying to play that song.
+
+User: the album
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: play album lunch break
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: play playlist lunch break
+Rusty: Playing playlist: Dinnertime soft indie
+
+User: play playlist lunch break by seedemouth
+Rusty: Playing playlist: List 6 ( english 4 today ) 
+
+User: listen to see them
+Rusty: Playing playlist: I'm a hopeless romantic that listens to love songs❤️
+
+User: listen to seedhe moth
+Rusty: Something went wrong trying to play that playlist.
+
+User: play lunch break by sidimode
+Rusty: Playing: Broken Clocks by SZA
+
+User: play lunch break
+Rusty: Playing: Asal G by Seedhe Maut
+
+User: thank you
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: thank you
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: play playlist trippy hindi
+Rusty: Playing playlist: TRIPPY HINDI🚬
+
+User: this is a conversation with an englishspeaking ai assistant named rusty
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: put on lunch break
+Rusty: Playing: Put It On Howard's Account (Instrumental) by Lunch Break Tigers
+
+User: put on lunch break by cedric moth
+Rusty: Playing: Picture Me by Dave
+
+User: thank you
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: play i dont miss that life
+Rusty: Playing: I Don't Miss That Life by Seedhe Maut
+
+User: play liked sounds
+Rusty: Playing: I Kissed a Girl and I Liked It by Bennie Carl
+
+User: lelight songs
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: play like songs
+Rusty: Playing: like JENNIE by JENNIE
+
+User: play light songs
+Rusty: Playing: Liggi by Ritviz
+
+User: play light songs
+Rusty: Playing: Liggi by Ritviz
+
+User: play my liked songs
+Rusty: Playing your liked songs.
+
+User: lets go please so
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: play songs from lunch break
+Rusty: 🎵 Playing album songs from lunch break
+
+User: play songs from lunch break
+Rusty: Couldn't find a album with that name.
+
+User: please
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: play songs by aditya singh
+Rusty: ⚠️ Couldn't find artist 'songs by aditya singh'
+
+User: play songs from lunch break
+Rusty: Couldn't find a album with that name.
+
+User: play songs by
+Rusty: 🎶 Playing songs by 
+
+User: please dont be frappéass
+Rusty: Sorry, there was an error with the AI model: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+
+User: play songs by joji
+Rusty: 🎶 Playing songs by joji
+
+User: rusty in it
+Rusty: Sorry, there was an error with the AI model: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+
+User: please songs by rusty
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: remember that when i say
+Rusty: Please say it like: 'when I say open DC, it means open Discord'.
+
+User: when i said plain music
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: when i say play music it means
+Rusty: Playing: The Things We Say by Dynamic Noise
+
+User: thank you
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: when i say play music it means play like songs
+Rusty: Playing: Rap God by Eminem
+
+User: when i say play music it means play likes like
+Rusty: Playing: Eleven Nine by Quammi
+
+User: remember that
+Rusty: Please say it like: 'when I say open DC, it means open Discord'.
+
+User: when i say open dc it means open discord
+Rusty: ⚠️ Couldn't find anything matching 'when i say  dc it means  discord'.
+
+User: when i say open dc it means open
+Rusty: ⚠️ Couldn't find anything matching 'when i say  dc it means'.
+
+User: when i say open dc it means open dc
+Rusty: ⚠️ Couldn't find anything matching 'when i say  dc it means  dc'.
+
+User: when i say open dc
+Rusty: ⚠️ Couldn't find anything matching 'when i say  dc'.
+
+User: when i say open dc it means
+Rusty: ⚠️ Couldn't find anything matching 'when i say  dc it means'.
+
+User: when i say open dc it means open discord
+Rusty: ⚠️ Couldn't find anything matching 'when i say  dc it means  discord'.
+
+User: when i say open dc it means open discord
+Rusty: ⚠️ Couldn't find anything matching 'when i say  dc it means  discord'.
+
+User: when i say open dc it means open discord
+Rusty: ⚠️ Couldn't find anything matching 'when i say  dc it means  discord'.
+
+User: when i say open dc it means
+Rusty: ⚠️ Couldn't find anything matching 'when i say  dc it means'.
+
+User: when i say open dc it means open discord
+Rusty: ⚠️ Couldn't find anything matching 'when i say  dc it means  discord'.
+
+User: remember that opendc means open
+Rusty: Something went wrong while learning that command.
+
+User: remember that open dc means open disk old
+Rusty: Something went wrong while learning that command.
+
+User: remember that open dc means open discourse
+Rusty: Something went wrong while learning that command.
+
+User: remember that opendc means opendiscord
+Rusty: Something went wrong while learning that command.
+
+User: remember that opendc means opendc
+Rusty: Something went wrong while learning that command.
+
+User: remember that play music means
+Rusty: Playing: Therapy by Atom Bomb
+
+User: remember that plate you
+Rusty: Please say it like: 'when I say open DC, it means open Discord'.
+
+User: remember that play music means play like songs
+Rusty: Playing: Did I Ever Wake Up?, Pt. 4 by MOD SUN
+
+User: remember that open dc means
+Rusty: Please say it like: 'when I say open DC, it means open Discord'.
+
+User: remember that opendc means open discord
+Rusty: Something went wrong while learning that command.
+
+User: remember that opendc means open discord
+Rusty: Something went wrong while learning that command.
+
+User: teach rusty open dc means open discord
+Rusty: Something went wrong while learning that command.
+
+User: when i say open dc
+Rusty: ⚠️ Couldn't find anything matching 'when i say  dc'.
+
+User: when i say open dc i mean open discord
+Rusty: ⚠️ Couldn't find anything matching 'when i say  dc i mean  discord'.
+
+User: remember that when a
+Rusty: Please say it like: 'when I say open DC, it means open Discord'.
+
+User: i remember that when i say open dc it means open dc
+Rusty: Something went wrong while learning that command.
+
+User: remember that openleasy means open discord
+Rusty: Something went wrong while learning that command.
+
+User: remember that open dc means open discord
+Rusty: Something went wrong while learning that command.
+
+User: pemmy tax
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: tell me a joke
+Rusty: Rusty had a hiccup. Try again in a moment.
+
+User: tell me a joke
+Rusty: Rusty had a hiccup. Try again in a moment.
+
+User: play like songs
+Rusty: No active device found. Please open Spotify.
+
+User: play like songs
+Rusty: Playing: like JENNIE by JENNIE
+
+User: play liked songs
+Rusty: Playing your liked songs.
+
+User: thank you
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: what is the name of this person tell me a joke
+Rusty: I don’t remember anything about the name of this person tell me a joke.
+
+User: hello tell me a joke hello tell me a joke hello tell me a joke hello tell me a joke hello tell me a joke hello tell me a joke hello tell me a joke hello tell me a joke hello hello hello hello hello hello hello hello hello hello hello hello hello
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: tell me a joke
+Rusty: Rusty had a hiccup. Try again in a moment.
+
+User: tell me a joke
+Rusty: Why don't scientists trust atoms? 
+
+Because they make up everything!
+
+
+User: terminal of the zoo
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: tell me another joke
+Rusty: Parallel lines have so much in common.  It’s a shame they’ll never meet.
+
+
+User: what is the capital of spain
+Rusty: I don’t remember anything about the capital of spain.
+
+User: tell me the capital of spain
+Rusty: Madrid
+
+
+User: tell me the population
+Rusty: The population of Madrid is a bit tricky to give a precise number for, as it depends on what area you're considering.
+
+* **Madrid City (Municipio de Madrid):**  This refers to the administrative city limits.  The population is roughly 3.3 million.
+
+* **Madrid Metropolitan Area (Área Metropolitana de Madrid):** This includes the surrounding suburbs and towns.  The population is significantly larger, estimated to be around 6.7 million.
+
+So, depending on the definition, the population is either around **3.3 million** or around **6.7 million**.
+
+
+User: how about the football team
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: leave my light on
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: play my late songs
+Rusty: No active device found. Please open Spotify.
+
+User: play my light songs
+Rusty: Playing: My Songs Know What You Did In The Dark (Light Em Up) by Fall Out Boy
+
+User: play my late songs
+Rusty: Playing: Main Yahaan Hoon by Madan Mohan
+
+User: play my light songs light
+Rusty: Playing: My Songs Know What You Did In The Dark (Light Em Up) by Fall Out Boy
+
+User: play my light sounds
+Rusty: Playing: Light Snoring (set to repeat) by Anu Vibration
+
+User: play light sounds
+Rusty: Playing: Lights Out by TJ Minor
+
+User: play light songs
+Rusty: Playing: Liggi by Ritviz
+
+User: play my light song
+Rusty: Playing: My Songs Know What You Did In The Dark (Light Em Up) by Fall Out Boy
+
+User: remind me to drink water and
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: remind me to drink water
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: my exam is
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: my exam is on monday
+Rusty: Sorry, I don't know how to handle that yet.
+
+User: remind me to drink water
+Rusty: None
+
+User: hi everyone im rusty im a
+Rusty: None
+
+User: what did i say earlier
+Rusty: None
+
+User: remember my gym
+Rusty: Please say something like 'remember my name is Rusty'
+
+User: remember that my gimp yeah
+Rusty: Please say it like: 'when I say open DC, it means open Discord'.
+
+User: remember that my gym pr is 50 kgs
+Rusty: Please say it like: 'when I say open DC, it means open Discord'.
+
+User: how are you
+Rusty: Sorry, I don’t know how to handle that yet.
+
+User: what
+Rusty: Sorry, I don’t know how to handle that yet.
+
+User: what is 25 times 40
+Rusty: I don’t remember anything about 25 times 40.
+
+User: how are you
+Rusty: Sorry, I don’t know how to handle that yet.
+
+User: vertice 25 times 40
+Rusty: Sorry, I don’t know how to handle that yet.
+
+User: what is 25 times 40
+Rusty: Rusty had a hiccup. Try again in a moment.
+
+User: im going to show you that we have a journey semester from another university from the state country
+Rusty: Sorry, I don’t know how to handle that yet.
+
+User: what is the capital of spain
+Rusty: I don’t remember anything about the capital of spain.
+
+User: tell me the capital of spain
+Rusty: Sorry, I don’t know how to handle that yet.
+
+User: open discord
+Rusty: ❌ Failed to open Discord: [WinError 2] The system cannot find the file specified
+
+User: open sportlify
+Rusty: ✅ Opening Spotify.
+
+User: open discord
+Rusty: ❌ Failed to open Discord: [WinError 2] The system cannot find the file specified
+
+User: when i say play tunes im not gonna play them
+Rusty: Playing: EAULDIE by FLEAU
+
+User: when i say play tunes i dont know what to do
+Rusty: Playing: The Interview by The Smashing Pumpkins
+
+User: when i say play tunes it means play likes
+Rusty: Playing: The Super Smash Bros Ultimate Cypher by NerdOut
+
+User: when i say play tunes it means
+Rusty: Playing: Keep Up by KSI
+
+User: when i say play tunes it means play liked
+Rusty: Playing your liked songs.
+
+User: when i say open browser i mean open op
+Rusty: Please use the format: 'when I say X it means Y'
+
+User: when i say open browser it means open or parallel
+Rusty: 🧠 Got it! When you say 'when i say open browser', I'll take it as 'open or parallel'.
+
+User: when i say open browser it means open
+Rusty: 🧠 Got it! When you say 'when i say open browser', I'll take it as 'open'.
+
+User: when i say open browser it means open browser
+Rusty: 🧠 Got it! When you say 'when i say open browser', I'll take it as 'open browser'.
+
+User: when her is an open browser it means open appara
+Rusty: Please use the format: 'when I say X it means Y'
+
+User: when i say open browser it means open browser
+Rusty: 🧠 Got it! When you say 'when i say open browser', I'll take it as 'open browser'.
+
+User: when i say open browser it means open appa
+Rusty: 🧠 Got it! When you say 'when i say open browser', I'll take it as 'open appa'.
+
+User: when i say open browser it means open opera
+Rusty: 🧠 Got it! When you say 'when i say open browser', I'll take it as 'open opera'.
+
+User: open browser
+Rusty: ✅ Opening web-browser.
+
+User: open browser
+Rusty: ✅ Opening web-browser.
+
+User: nice open browser
+Rusty: ✅ Opening web-browser.
+
+User: then i say open browser
+Rusty: ✅ Opening help-browser.
+
+User: open opera
+Rusty: ✅ Opening opera.
+
+User: remember that play tunes means play like
+Rusty: Playing: Back At It by Queue The Kid
+
+User: shut up shut up
+Rusty: Playback paused.
+
+User: remember that
+Rusty: Please say something like 'remember my name is Rusty'.
+
+User: remember that open sp means opens spotify
+Rusty: Please use the format: 'X it means Y'
+
+User: open spotify it means open
+Rusty: 🧠 Got it! When you say 'open spotify', I'll take it as 'open'.
+
+User: open sp means open spotify
+Rusty: Please use the format: 'X it means Y'
+
+User: open sp means open spotify
+Rusty: Please use the format: 'X it means Y'
+
+User: open sp means opens 45
+Rusty: Please use the format: 'X it means Y'
+
+User: open sp means open spotify
+Rusty: Please use the format: 'X it means Y'
+
+User: open sp means open spotify
+Rusty: Please use the format: 'X it means Y'
+
+User: open sp it means open spotify
+Rusty: 🧠 Got it! When you say 'open sp', I'll take it as 'open spotify'.
+
+User: remember that
+Rusty: Please say something like 'remember my name is Rusty'.
+
+User: remember that plate tunes it means
+Rusty: Please use the format: 'X means Y' or 'when I say X it means Y'
+
+User: play tunes means play light songs
+Rusty: Playing: Summertime by Brett Raio
+
+User: play tunes it means play like song
+Rusty: Playing: Feudalism by VENMC
+
+User: when i say play tunes it means play light songs
+Rusty: Playing: Who’s On First by Abbott & Costello
+
+User: shut up
+Rusty: Playback paused.
+
+User: when i say play tunes its a lot of fun
+Rusty: Playing: The Interview by The Smashing Pumpkins
+
+User: when i say play tunes im not sure what im saying
+Rusty: Playing: EAULDIE by FLEAU
+
+User: when i say playtunes it means playtunes
+Rusty: 🧠 Got it! When you say 'playtunes', I'll take it as 'playtunes'.
+
+User: when i say clay tunes it means clay like clay
+Rusty: 🧠 Got it! When you say 'clay tunes', I'll take it as 'clay like clay'.
+
+User: playtunes
+Rusty: Playing: Vibes by Merlin Babaji
+
+User: play liked songs
+Rusty: Playing: Vibes by Merlin Babaji
+
+User: start up
+Rusty: ✅ Opening stat.
+
+User: start up
+Rusty: ✅ Opening stat.
+
