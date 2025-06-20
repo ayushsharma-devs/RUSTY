@@ -1,21 +1,112 @@
-# Python virtual environments
-venv/
+# ========== Python Bytecode / Cache ==========
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
 
-# Sensitive files
+# ========== Virtual Environments ==========
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# ========== Sensitive Files ==========
 .env
+.pypirc
+.pdm.toml
+.pdm-python
 
-# Audio files
+# ========== Audio & Model Files ==========
 *.wav
-
-# Model files
 models/
 *.gguf
 
-# Logs
+# ========== Logs & Databases ==========
 *.log
+db.sqlite3
+db.sqlite3-journal
 
-# System files
-.DS_Store
-Thumbs.db
+# ========== Build & Distribution ==========
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ========== Installer Files ==========
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ========== PyInstaller ==========
+*.manifest
+*.spec
+
+# ========== Test & Coverage ==========
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# ========== IDE & Editor Settings ==========
+# VS Code
+.vscode/
+
+# JetBrains / PyCharm
+.idea/
+
+# Spyder
+.spyderproject
+.spyproject
+
+# Rope
+.ropeproject
+
+# ========== Documentation ==========
+docs/_build/
+site/
+
+# ========== Jupyter ==========
+.ipynb_checkpoints
+
+# ========== Type Checking & Linting ==========
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.ruff_cache/
+
+# ========== Misc ==========
+*.mo
+*.pot
+instance/
+.webassets-cache
+.scrapy
+target/
+__pypackages__/
+cython_debug/
+.cursorignore
+.cursorindexingignore
