@@ -4,10 +4,10 @@ import os
 import psutil  # pip install psutil
 from difflib import get_close_matches
 
-# Load installed apps JSON
-with open("app_manager/installed_apps.json", "r") as f:
+json_path = os.path.join(os.path.dirname(__file__), "installed_apps.json")
+with open(json_path, "r") as f:
+    # Load installed apps JSON
     INSTALLED_APPS = json.load(f)
-
 def normalize_name(name):
     return name.lower().replace(" ", "").replace(".exe", "")
 

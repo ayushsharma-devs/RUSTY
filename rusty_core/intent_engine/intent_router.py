@@ -54,6 +54,9 @@ def handle_intent(intent, user_input):
     elif intent == "shuffle":
         return sc.shuffle()
 
+    elif intent == "whats_playing":
+        return sc.whats_playing()
+
     # --------- MEMORY INTENTS -------------
     elif intent == "remember_fact":
         parts = user_input.lower().replace("remember that", "").replace("remember", "").strip().split(" is ")

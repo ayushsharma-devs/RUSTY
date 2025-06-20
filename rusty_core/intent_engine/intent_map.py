@@ -14,15 +14,17 @@ intent_keywords = {
     "set_volume": ["set volume", "volume to"],
     "mute": ["mute audio","mute"],
     "shuffle": ["shuffle","shuffle songs","put it on shuffle"],
-    "prev_song": ["previous", "previous song"],
+    "prev_song": ["previous", "previous song","last song"],
+    "whats_playing": ["what is playing", "what is on", "what is the song"],
 
+    #teaching intent
     "teach_command": ["when i say", "teach rusty", "means"],
 
-
+    #app manager intent
     "open_app": ["open ", "launch", "start", "run"],
     "close_app": ["close", "exit", "stop", "terminate"],
 
-    
+    #memory intent
     "remember_fact": ["remember that", "store this", "save this"],
     "recall_fact": ["what is", "do you know", "recall"],
     "list_memory": ["what do you remember", "list memory"],

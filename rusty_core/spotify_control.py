@@ -5,6 +5,7 @@ import time
 import subprocess
 from app_manager.app_control import open_app
 from config import SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, SPOTIFY_REDIRECT_URI
+import random
 
 scope = "user-read-playback-state user-modify-playback-state user-read-currently-playing user-library-read"
 
@@ -14,6 +15,9 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
     redirect_uri=SPOTIFY_REDIRECT_URI,
     scope=scope
 ))
+
+
+
 
 def ensure_active_device():
     devices = sp.devices().get("devices", [])
@@ -25,6 +29,15 @@ def ensure_active_device():
         return None
     return devices[0]["id"]
 
+
+def whats_playing():
+    playback = sp.current_playback()
+    if playback and playback['is_playing']:
+        track = playback['item']
+        name = track['name']
+        artist = track['artists'][0]['name']
+        return f"Now playing '{name}' by {artist}."
+    return "Nothing is playing right now."
 
 def play_playlist_by_name(name):
     try:
@@ -62,20 +75,40 @@ def play_song(name):
     except Exception as e:
         print("Error playing song:", e)
         return "Something went wrong trying to play that song."
-    
-def play_liked():
 
+def get_all_liked_tracks():
+    all_tracks = []
+    limit = 50
+    offset = 0
+
+    while True:
+        results = sp.current_user_saved_tracks(limit=limit, offset=offset)
+        items = results.get("items", [])
+        if not items:
+            break
+
+        all_tracks.extend(items)
+        offset += limit
+
+    return all_tracks
+
+
+def play_liked():
     device_id = ensure_active_device()
     if not device_id:
         return "No active Spotify device found."
 
-    tracks = sp.current_user_saved_tracks(limit=1)['items']
-    if not tracks:
+    liked_tracks = get_all_liked_tracks()
+    if not liked_tracks:
         return "Your Liked Songs list is empty."
 
-    track_uri = tracks[0]['track']['uri']
-    sp.start_playback(device_id=device_id, uris=[track_uri])
-    return "Playing your liked songs."
+    track_uris = [item['track']['uri'] for item in liked_tracks]
+
+    random.shuffle(track_uris)
+
+    sp.start_playback(device_id=device_id, uris=track_uris[:100])  # 🚨 Max ~100 per call is safest
+    return f"Playing {len(track_uris)} of your liked songs."
+
 def play_by_artist(artist_name):
     results = sp.search(q=f"artist:{artist_name}", type='artist')
     if results['artists']['items']:
