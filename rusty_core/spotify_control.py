@@ -19,7 +19,7 @@ def ensure_active_device():
     devices = sp.devices().get("devices", [])
     if not devices:
         open_app("spotify")
-        time.sleep(5)
+        time.sleep(15)
         devices = sp.devices().get("devices", [])
     if not devices:
         return None
