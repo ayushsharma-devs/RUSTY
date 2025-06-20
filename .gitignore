@@ -1,0 +1,21 @@
+# Python virtual environments
+venv/
+__pycache__/
+*.pyc
+
+# Sensitive files
+.env
+
+# Audio files
+*.wav
+
+# Model files
+models/
+*.gguf
+
+# Logs
+*.log
+
+# System files
+.DS_Store
+Thumbs.db
