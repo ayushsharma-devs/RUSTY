@@ -215,3 +215,54 @@ Rusty: As a large language model, I don't have a life in the same way humans do.
 User: well thanks for the sign
 Rusty: You're welcome!  I'm glad I could help in some way.  Let me know if you have any other questions.
 
+User: hey bro play spotify
+Rusty: Playing: Bachcha Party by Rego B
+
+User: le nanchaku
+Rusty: The nunchaku (also spelled nunchucks) is a traditional Okinawan martial arts weapon consisting of two sticks connected by a short chain or rope.  It's known for its speed and the complex techniques used to wield it effectively.  Its use requires significant skill and practice to avoid self-injury.  Many jurisdictions have laws restricting or prohibiting the possession and use of nunchaku.
+
+User: not bad
+Rusty: Okay, good to know!  Is there anything else I can help you with?
+
+User: well see you next time
+Rusty: Couldn't skip the track.
+
+User: open spotify
+Rusty: ✅ Opening Spotify.
+
+User: play like songs
+Rusty: Playing 509 of your liked songs.
+
+User: tell me a joke
+Rusty: Why don't scientists trust atoms? 
+
+Because they make up everything!
+
+User: open spotify
+Rusty: ✅ Opening Spotify.
+
+User: play light songs
+Rusty: Playing: Liggi by Ritviz
+
+User: play light songs
+Rusty: Playing: Liggi by Ritviz
+
+User: open notepad
+Rusty: ✅ Opening Notepad.
+
+User: thank you
+Rusty: You're welcome! Is there anything else I can help you with?
+
+User: happy tunes
+Rusty: To give you some "happy tunes," I need a little more information!  What kind of music do you like?  For example:
+
+* **Genre:** Pop, rock, classical, jazz, electronic, folk, country, etc.
+* **Tempo:** Upbeat, mellow, something in between?
+* **Instruments:**  Do you prefer certain instruments?
+* **Mood:**  Besides "happy," are you looking for something playful, energetic, chill, or something else?
+
+Tell me more, and I'll do my best to suggest some happy songs!
+
+User: stay tuned
+Rusty: Okay, I'll be here! Let me know when you're ready.
+

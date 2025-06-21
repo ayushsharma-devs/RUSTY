@@ -1,7 +1,7 @@
 import warnings
 warnings.filterwarnings("ignore")
 import threading
-from voice import listen, speak
+from voice_engine import listen, speak, init_voice_engine
 from intent_engine.intent_router import handle_intent
 import time
 from gpt_conversation import generate_response
@@ -59,9 +59,15 @@ def threaded_response(user_input):
 def run_assistant():
     MAX_TIMEOUTS = 2
     timeouts = 0
+    init_voice_engine()
     speak("Rusty is awake and listening.")
+    print("🟢 called speak")
+    time.sleep(1.5)
+    print("🟢 entering main listen loop")
     while True:
+        print("🟢 calling listen()")
         user_input = listen()
+        print(f"🟢 listen() returned: {user_input}")
         if not user_input or user_input == "timeout":
             timeouts += 1
             if timeouts >= MAX_TIMEOUTS:
