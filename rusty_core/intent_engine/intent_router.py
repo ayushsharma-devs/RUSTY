@@ -1,24 +1,29 @@
+import re
 import spotify_control as sc
-from app_manager.app_control import open_app, close_app
-from memory import remember, recall, list_memory, clear_memory
+from app_manager.app_control import open_app, close_app, extract_app_name
+from memory import remember, recall, list_memory, recent_mention, clear_memory
 from style_learning import teach_command
 from gpt_conversation import generate_response
 
-import re
 
 def handle_intent(intent, user_input):
-    # ----- SPOTIFY INTENTS ----------
+    lowered = user_input.lower().strip()
+
+    # --------- SPOTIFY INTENTS ----------
     if intent == "play_music":
-        return sc.play_song(user_input.replace("play", "").strip())
+        song_query = lowered.replace("play", "").strip()
+        if len(song_query.split()) < 2:
+            return generate_response(user_input)  # vague "play" fallback
+        return sc.play_song(song_query)
 
     elif intent == "play_playlist":
-        return sc.play_playlist_by_name(user_input.replace("play", "").strip())
+        return sc.play_playlist_by_name(lowered.replace("play playlist", "").strip())
 
     elif intent == "play_album":
-        return sc.play_album(user_input.replace("play songs from", "").strip())
+        return sc.play_album(lowered.replace("play album", "").strip())
 
     elif intent == "play_artist":
-        return sc.play_by_artist(user_input.replace("play songs by", "").strip())
+        return sc.play_by_artist(lowered.replace("play songs by", "").strip())
 
     elif intent == "play_liked":
         return sc.play_liked()
@@ -42,7 +47,7 @@ def handle_intent(intent, user_input):
         return sc.decrease_volume()
 
     elif intent == "set_volume":
-        match = re.search(r'\b(\d+)\b', user_input)
+        match = re.search(r'\b(\d+)\b', lowered)
         if match:
             volume = int(match.group(1))
             return sc.set_volume(volume)
@@ -58,21 +63,40 @@ def handle_intent(intent, user_input):
         return sc.whats_playing()
 
     # --------- MEMORY INTENTS -------------
+
     elif intent == "remember_fact":
-        parts = user_input.lower().replace("remember that", "").replace("remember", "").strip().split(" is ")
-        if len(parts) == 2:
-            key = parts[0].strip()
-            value = parts[1].strip()
+        match = re.search(r"(?:remember(?: that)?|can you remember(?: that)?) (.*?) is (.*)", lowered)
+        if match:
+            key = match.group(1).strip()
+            value = match.group(2).strip()
             return remember(key, value)
-        return "Please say something like 'remember my name is Rusty'."
+        return "Please say something like 'remember my birthday is June 1st'."
 
     elif intent == "recall_fact":
-    # avoid misfired math questions etc.
-        if any(char.isdigit() for char in user_input) and "what is" in user_input:
-            return generate_response(user_input)  # treat as chat
-        key = user_input.lower().replace("what is", "").strip()
+        # Avoid math-style prompts
+        if any(char.isdigit() for char in lowered) and "what is" in lowered:
+            return generate_response(user_input)
+
+        key = (
+            lowered.replace("what is", "")
+            .replace("what do you remember about", "")
+            .replace("what do you know about", "")
+            .replace("do you remember", "")
+            .replace("what's my", "")
+            .strip()
+        )
         return recall(key)
 
+    elif intent == "recall_recent":
+        if "what did i say about" in lowered:
+            topic = lowered.split("what did i say about", 1)[1].strip()
+            response = recent_mention(topic)
+            return f"You said: '{response}'" if response else f"I don’t remember you mentioning {topic} recently."
+        elif "did i mention" in lowered:
+            topic = lowered.split("did i mention", 1)[1].strip()
+            response = recent_mention(topic)
+            return f"You mentioned: '{response}'" if response else f"I don’t remember you mentioning {topic} recently."
+        return "Try saying something like 'what did I say about football?'"
 
     elif intent == "list_memory":
         return list_memory()
@@ -80,17 +104,9 @@ def handle_intent(intent, user_input):
     elif intent == "clear_memory":
         return clear_memory()
 
-    # --------- INTENT TEACHING ----------
-    # elif intent == "teach_command":
-    #     try:
-    #         parts = user_input.lower().split(" it means ")
-    #         if len(parts) == 2:
-    #             user_phrase, actual_intent = parts
-    #             return teach_command(user_phrase.strip())
-    #         else:
-    #             return "Please say it like: 'when I say open DC, it means open Discord'."
-    #     except:
-    #         return "Something went wrong while learning that command."
+ 
+
+    # --------- STYLE LEARNING ----------
     elif intent == "teach_command":
         try:
             return teach_command(user_input)
@@ -99,11 +115,15 @@ def handle_intent(intent, user_input):
 
     # --------- APP CONTROL ----------
     elif intent == "open_app":
-        return open_app(user_input.replace("open", "").strip())
+        app_name = extract_app_name(user_input)
+        return open_app(app_name) if app_name else "⚠️ Sorry, I couldn't understand which app to open."
 
     elif intent == "close_app":
-        return close_app(user_input.replace("close", "").strip())
+        app_name = extract_app_name(user_input)
+        return close_app(app_name) if app_name else "⚠️ Sorry, I couldn't understand which app to close."
+
+    # --------- DEFAULT FALLBACK ----------
     elif intent == "chat":
         return generate_response(user_input)
-    else:
-        return "Sorry, I don't know how to handle that yet."
+
+    return "⚠️ I don’t know how to handle that yet."

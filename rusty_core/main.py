@@ -37,12 +37,30 @@ def threaded_response(user_input):
 
         # 🎯 Detect intent and respond  
         intent = detect_intent(personalized_input)
-        print(f"🔎 Detected Intent: {intent}")
 
         response = None
+
+        # Smart fallback if intent is "chat" but the phrasing looks memory-related
+        if intent == "chat":
+            lowered = personalized_input.lower()
+    
+        if "what did i say about" in lowered:
+            intent = "recall_recent"
+        elif lowered.startswith("remember") or "remember that" in lowered:
+            intent = "remember_fact"
+        elif lowered.startswith("forget") or "forget what i told you about" in lowered:
+            intent = "forget_fact"
+        elif lowered.startswith("what is") or "what do you remember" in lowered:
+            intent = "recall_fact"
+        elif "list memory" in lowered or "show memory" in lowered:
+            intent = "list_memory"
+        elif "clear memory" in lowered or "reset memory" in lowered:
+            intent = "clear_memory"
+
+# Route to memory or fallback
         if intent and intent != "chat":
             response = handle_intent(intent, personalized_input)
-        if intent is None or intent == "chat":
+        else:
             response = generate_response(personalized_input)
 
         # 🗣️ Speak and log
@@ -61,13 +79,9 @@ def run_assistant():
     timeouts = 0
     init_voice_engine()
     speak("Rusty is awake and listening.")
-    print("🟢 called speak")
     time.sleep(1.5)
-    print("🟢 entering main listen loop")
     while True:
-        print("🟢 calling listen()")
         user_input = listen()
-        print(f"🟢 listen() returned: {user_input}")
         if not user_input or user_input == "timeout":
             timeouts += 1
             if timeouts >= MAX_TIMEOUTS:

@@ -19,22 +19,32 @@ try:
             continue
         original_input = user_input
         # Detect intent (local or Gemini fallback)
-        intent = detect_intent(user_input)
-        print(f"🔍 Intent Detected: {intent}")
-        user_input = personalize_input(user_input)
+        
+        personalized_input = personalize_input(user_input)
         if user_input != original_input:
             print(f"🔍 Personalized Input: {user_input}")
-        response = None
+        intent = detect_intent(personalized_input)
+        lowered = personalized_input.lower()
 
-        # Only handle non-chat intents
-        if intent and intent != "chat":
-            response = handle_intent(intent, user_input)
+# Smart fallback remapping for missed memory triggers
+        if intent == "chat":
+            if "what did i say about" in lowered:
+                intent = "recall_recent"
+            elif lowered.startswith("remember") or "remember that" in lowered:
+                intent = "remember_fact"
+            elif lowered.startswith("forget") or "forget what i told you about" in lowered:
+                intent = "forget_fact"
+            elif lowered.startswith("what is") or "what do you remember" in lowered:
+                intent = "recall_fact"
+            elif "list memory" in lowered or "show memory" in lowered:
+                intent = "list_memory"
+            elif "clear memory" in lowered or "reset memory" in lowered:
+                intent = "clear_memory"
 
-        # If no valid handler or intent is chat → use Gemini to reply
-        if response is None:
-            response = generate_response(user_input)
+        response = handle_intent(intent, personalized_input) if intent != "chat" else generate_response(personalized_input)
 
-        print("🤖 Rusty:", response)
+        print(f"🔍 Intent: {intent}")
+        print(f"🔍 Response: {response}")
 
 finally:
     save_memory_context()
