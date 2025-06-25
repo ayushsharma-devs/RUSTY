@@ -440,3 +440,38 @@ Rusty: This looks like a simple repetition.  It means there are **20** notepads 
 User: open notepad
 Rusty: ✅ Opening notepad.
 
+User: in spotify in spotify
+Rusty: Did you mean to ask a question about Spotify?  Your phrase "in spotify in spotify" is repetitive and doesn't form a question.  Please clarify what you'd like to know about Spotify.
+
+User: open spot open spotify
+Rusty: ✅ Opening Spotify.
+
+User: play like music
+Rusty: To play music like a specific song or artist on Spotify, you need to tell me *what* kind of music you'd like.  For example:
+
+* "Play music like Taylor Swift"
+* "Play music like the song 'Bohemian Rhapsody'"
+* "Play 80s pop music"
+* "Play classical guitar music"
+
+
+Give me more details and I can help you formulate a search query for Spotify.
+
+User: play liked, play liked music
+Rusty: Playing 510 of your liked songs.
+
+User: set volume, set volume to 80
+Rusty: Volume set to <POINTER(IAudioEndpointVolume) ptr=0x222ff180f50 at 2233fa4c340>%.
+
+User: close whats up
+Rusty: ⚠️ Sorry, I couldn't understand which app to close.
+
+User: close whats up
+Rusty: ⚠️ Sorry, I couldn't understand which app to close.
+
+User: what's what's up?
+Rusty: "What's up?" is a casual greeting, similar to "Hi," "Hello," or "What's going on?".  It's a way of asking how someone is doing, but usually in a relaxed and informal setting.
+
+User: close whats up
+Rusty: ⚠️ Sorry, I couldn't understand which app to close.
+

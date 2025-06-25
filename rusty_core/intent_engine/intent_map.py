@@ -6,7 +6,9 @@ intent_keywords = {
         "play liked songs", 
     "play my liked songs", 
     "play liked", 
-    "play like songs"
+    "play like songs",
+    "play like music",
+    "play liked music"
     ],
 
 "play_playlist": [
@@ -61,30 +63,16 @@ intent_keywords = {
     # ❌ Removed just "next"
 ],
 
-"volume_up": [
-    "increase volume", 
-    "volume up", 
-    "make it louder", 
-    "raise the volume"
+
+"mute music": [ 
+    "mute music", 
+    "silence music",
+    "mute spotify"
 ],
 
-"volume_down": [
-    "decrease volume", 
-    "volume down", 
-    "make it quieter", 
-    "lower the volume"
-],
-
-"set_volume": [
-    "set volume to", 
-    "volume to", 
-    "set it to"
-],
-
-"mute": [
-    "mute", 
-    "mute audio", 
-    "silence music"
+"unmute music": [
+    "unmute music", 
+    "unmute spotify"
 ],
 
 "shuffle": [
@@ -106,6 +94,60 @@ intent_keywords = {
     "what song is this", 
     "what's playing"
 ],
+
+# --- System control intents ---
+"set_volume": [
+    "set volume to", 
+    "volume to", 
+    "set it to"
+],
+
+"battery": [
+    "battery",
+    "battery level",
+    "battery percentage",
+    "battery status",
+],
+"screenshot": [
+    "screenshot",
+    "take a screenshot",
+    "capture screen",
+    "screenshot of",
+],
+
+"lock": [
+    "lock",
+    "lock screen",
+    "lock the screen",
+    "lock the computer",
+],
+"shutdown": [
+    "shutdown",
+    "shut down",
+    "turn off",
+    "power off",
+],
+"sleep": [
+    "sleep",
+    "sleep mode",
+    "sleep the computer",
+    "sleep the laptop",
+],
+"restart": [
+    "restart",
+    "restart the computer",
+    "restart the laptop",
+],
+
+"mute": [
+    "mute",
+    "mute audio"
+],
+"unmute": [
+    "unmute",
+    "unmute audio"
+],
+
 
 
     #app manager intent

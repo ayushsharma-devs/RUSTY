@@ -8,16 +8,15 @@ import webrtcvad
 import collections
 from faster_whisper import WhisperModel
 import edge_tts
-from tempfile import NamedTemporaryFile
 import tempfile
 import asyncio
 import subprocess
-import soundfile as sf
 
 # --- Config ---
 SAMPLE_RATE = 16000
 FRAME_DURATION = 30  # ms
 FRAME_SIZE = int(SAMPLE_RATE * FRAME_DURATION / 1000)
+FRAME_BYTES = FRAME_SIZE * 2  # 2 bytes per sample (int16)
 MAX_SILENCE_DURATION = 0.5  # seconds
 VOICE = os.getenv("TTS_VOICE", "en-US-GuyNeural")
 DEBUG = os.getenv("DEBUG", "false").lower() == "true"
@@ -38,15 +37,14 @@ class AudioBuffer:
         self.max_frames = int(SAMPLE_RATE / FRAME_SIZE * max_seconds)
         self.frames = collections.deque(maxlen=self.max_frames)
 
-    def add_frame(self, frame):
-        self.frames.append(frame)
+    def add_frame(self, frame_bytes):
+        self.frames.append(frame_bytes)
 
     def get_audio(self):
         return b"".join(self.frames)
 
 # --- WebRTC VAD ---
-vad = webrtcvad.Vad()
-vad.set_mode(3)
+vad = webrtcvad.Vad(3)  # Most aggressive mode
 
 # --- TTS Async ---
 async def speak_async(text):
@@ -65,7 +63,6 @@ async def speak_async(text):
             stderr=asyncio.subprocess.DEVNULL
         )
         await process.wait()
-
         os.remove(tmp_path)
 
     except Exception as e:
@@ -106,62 +103,56 @@ def speak(text):
         tts_queue.put(text)
 
 # --- Listen Function ---
-def listen(): 
+def listen():
     print("🎤 Listening...")
     ring_buffer = collections.deque(maxlen=30)
-    assert ring_buffer.maxlen is not None  # silence Pyright
-    pre_trigger_buffer = collections.deque(maxlen=int(1.0 * 1000 / FRAME_DURATION))  # ~1 sec pre-buffer
+    pre_trigger_buffer = collections.deque(maxlen=int(1000 / FRAME_DURATION))  # ~1 sec
     triggered = False
-    voiced_frames = []
     audio_buffer = AudioBuffer()
 
-    stream = sd.InputStream(samplerate=SAMPLE_RATE, blocksize=FRAME_SIZE,
-                                dtype='int16', channels=1)
+    stream = sd.InputStream(samplerate=SAMPLE_RATE, blocksize=FRAME_SIZE, dtype='int16', channels=1)
     with stream:
         while not stop_event.is_set():
             if speaking_event.is_set():
-             
                 time.sleep(0.1)
                 continue
 
             frame, _ = stream.read(FRAME_SIZE)
-            
-            pre_trigger_buffer.append(frame)
+            frame_bytes = frame.tobytes()
 
-            is_speech = vad.is_speech(frame, SAMPLE_RATE)
-           
+            if len(frame_bytes) != FRAME_BYTES:
+                print(f"[⚠️] Invalid frame length: {len(frame_bytes)}. Skipping.")
+                continue
+
+            is_speech = vad.is_speech(frame_bytes, SAMPLE_RATE)
+            pre_trigger_buffer.append(frame_bytes)
+
             if not triggered:
-                ring_buffer.append((frame, is_speech))
-                
+                ring_buffer.append((frame_bytes, is_speech))
                 num_voiced = len([f for f, speech in ring_buffer if speech])
-              
+
                 if num_voiced > 0.9 * ring_buffer.maxlen:
                     triggered = True
 
-                    # 🔁 Include pre-trigger audio
                     for f in pre_trigger_buffer:
-                        voiced_frames.append(f)
                         audio_buffer.add_frame(f)
 
-                    # 🔁 Include ring buffer frames
                     for f, _ in ring_buffer:
-                        voiced_frames.append(f)
                         audio_buffer.add_frame(f)
 
                     ring_buffer.clear()
             else:
-                voiced_frames.append(frame)
-                audio_buffer.add_frame(frame)
-                ring_buffer.append((frame, is_speech))
+                audio_buffer.add_frame(frame_bytes)
+                ring_buffer.append((frame_bytes, is_speech))
                 num_unvoiced = len([f for f, speech in ring_buffer if not speech])
+
                 if num_unvoiced > MAX_SILENCE_DURATION * 1000 / FRAME_DURATION:
                     break
 
     audio_data = np.frombuffer(audio_buffer.get_audio(), dtype=np.int16)
+
     if len(audio_data) < 1000:
         return "timeout"
-
-    # 🔊 Save captured audio for debugging
 
     try:
         segments, _ = whisper_model.transcribe(audio=audio_data, language="en")
