@@ -1,76 +1,108 @@
 # 🤖 Rusty – Your Personal Voice AI Assistant
 
-Rusty is a locally running voice-based AI assistant that listens to your commands, understands your intent, and takes action — like opening apps, playing music, or holding a conversation with Gemini.
+Rusty is a locally running voice-based AI assistant that listens to your commands, understands your intent, and takes action — like opening apps, playing music, or holding a conversation with Gemini. Now evolving to support **neurodivergent-friendly** features, especially those that help with **ADHD-focused productivity**.
 
 ---
 
 ## 🚀 Features
 
-- 🎙️ Voice command recognition using [OpenAI Whisper](https://github.com/openai/whisper)
-- 🧠 Smart conversations using Google Gemini (Generative AI)
-- 🎵 Spotify integration (play/pause/liked songs)
-- 📁 App control (open apps like Chrome, Discord, etc.)
-- 🧠 Learns your personal command styles over time
-- 🔒 Runs completely on your device (no cloud audio)
+* 🎙️ Voice command recognition using [OpenAI Whisper](https://github.com/openai/whisper)
+* 🧠 Smart conversations using Google Gemini (Generative AI)
+* 🎵 Spotify integration (play/pause/liked songs)
+* 📁 App control (open apps like Chrome, Discord, etc.)
+* 🧠 Learns your personal command styles over time
+* 🔒 Runs completely on your device (no cloud audio)
+* 🧠 Experimental ADHD-aware focus assistant features
 
 ---
+
 📍 Features Roadmap
 Rusty is a voice-activated desktop assistant designed to help you interact with your system and AI models in a natural and productive way. Below is the current and planned roadmap for its features.
 
-✅ Core Features (Completed)
-🎙️ Voice Activation & Wake Word
-Responds to a custom wake word ("Hey bro", etc.) using Whisper and speech recognition.
+### ✅ Core Features (Completed)
 
-🧠 Conversational AI (Gemini)
-Integrates Google’s Gemini API for contextual, chat-style conversations.
+* 🎙️ **Voice Activation & Wake Word**
+  Responds to a custom wake word ("Hey bro", etc.) using Whisper and speech recognition.
 
-🗂️ Intent Detection & Routing
-Classifies user commands (e.g., "play music", "open Discord") and routes to appropriate functions.
+* 🧠 **Conversational AI (Gemini)**
+  Integrates Google’s Gemini API for contextual, chat-style conversations.
 
-📂 App Launcher Module
-Opens apps like Chrome, Spotify, Discord, etc., based on voice commands.
+* 🗂️ **Intent Detection & Routing**
+  Classifies user commands (e.g., "play music", "open Discord") and routes to appropriate functions.
 
-🎵 Spotify Integration
-Play, pause, skip, or like Spotify songs using voice.
+* 📂 **App Launcher Module**
+  Opens apps like Chrome, Spotify, Discord, etc., based on voice commands.
 
-💾 Memory Module
-Learns and recalls user-specific data using "remember" and "recall" style commands.
+* 🎵 **Spotify Integration**
+  Play, pause, skip, or like Spotify songs using voice.
 
-🧠 Style Learning (Personalized Input Parser)
-Learns your phrasing style and maps "when I say X" → "do Y" with persistent mappings.
+* 💾 **Memory Module**
+  Learns and recalls user-specific data using "remember" and "recall" style commands.
 
-🔒 Environment Config Management
-Securely loads API keys and settings from .env via a config module.
+* 🧠 **Style Learning (Personalized Input Parser)**
+  Learns your phrasing style and maps "when I say X" → "do Y" with persistent mappings.
 
-🧪 In Progress / Experimental
-🧬 Conversation History Memory
-Let Rusty maintain session-based or persistent conversation memory using vector stores or Redis.
+* 🔒 **Environment Config Management**
+  Securely loads API keys and settings from .env via a config module.
 
-🗣️ Personality Tuning
-Customize Rusty’s tone/personality (e.g., sarcastic, formal, chill).
+---
 
-🧱 Modular Plugin System
-Allow external Python scripts or user-added actions to plug into Rusty.
+### 🧪 In Progress / Experimental
 
-📖 Context-Aware Learning
-Let Rusty learn from your past interactions to better handle future ones.
+* 🧬 **Conversation History Memory**
+  Let Rusty maintain session-based or persistent conversation memory using vector stores or Redis.
 
-🧭 Planned Features (Upcoming)
-🪟 Minimal GUI Overlay
-A floating mic icon or window showing conversation transcripts and quick toggles.
+* 🗣️ **Personality Tuning**
+  Customize Rusty’s tone/personality (e.g., sarcastic, formal, chill).
 
-🎯 Goal/Task Assistant
-Set reminders, timers, daily check-ins, or to-do tasks via voice.
+* 🧱 **Modular Plugin System**
+  Allow external Python scripts or user-added actions to plug into Rusty.
 
-🧩 Hybrid Model Support
-Seamless fallback between Gemini API and local LLMs (like TinyLLaMA via llama-cpp-python).
+* 📖 **Context-Aware Learning**
+  Let Rusty learn from your past interactions to better handle future ones.
 
-📦 Rusty Packager
-Export Rusty as a background .exe (for Windows) or bundled app for easy use.
+---
 
-🛜 Local Server API (Rusty API)
-Let other programs talk to Rusty over HTTP for command automation or integration.
------
+### 🧠 ADHD-Focused Features (WIP/Planned)
+
+* 🧩 **Focus Mode with Voice Nudges**
+  Activate Pomodoro-style sessions with voice reminders and “blank brain” mode to reduce overwhelm.
+
+* 🧠 **Task Recall Assistant**
+  Rusty will remember your dropped/incomplete tasks and gently bring them up later.
+
+* 🧘 **Voice-Based Anchoring**
+  Let Rusty talk you through grounding or calming exercises if you're overstimulated.
+
+* 🧵 **Threaded Thought Reminder**
+  If you say “Remind me later”, Rusty will follow up based on your energy or time.
+
+* 🧑‍🎨 **Personalized Voice Reinforcement**
+  Rusty adapts tone and phrasing to how *you* respond best: chill, affirming, playful, or structured.
+
+* 🧠 **Neurodivergent Mode Toggle**
+  A toggle that adjusts task delivery pace, voice tone, and repetition tolerance based on ADHD-friendly presets.
+
+---
+
+### 🧭 Planned Features (Upcoming)
+
+* 🪟 **Minimal GUI Overlay**
+  A floating mic icon or window showing conversation transcripts and quick toggles.
+
+* 🎯 **Goal/Task Assistant**
+  Set reminders, timers, daily check-ins, or to-do tasks via voice.
+
+* 🧩 **Hybrid Model Support**
+  Seamless fallback between Gemini API and local LLMs (like TinyLLaMA via llama-cpp-python).
+
+* 📦 **Rusty Packager**
+  Export Rusty as a background .exe (for Windows) or bundled app for easy use.
+
+* 🛜 **Local Server API (Rusty API)**
+  Let other programs talk to Rusty over HTTP for command automation or integration.
+
+---
 
 ## 🛠️ Requirements
 
@@ -78,20 +110,31 @@ Install dependencies with:
 
 ```bash
 pip install -r requirements.txt
+```
 
-SETUP
-1. Create a .env file in the root folder:
+### SETUP
+
+1. Create a `.env` file in the root folder:
+
+```
 GEMINI_API_KEY=your_google_api_key
 SPOTIFY_CLIENT_ID=your_spotify_id
 SPOTIFY_CLIENT_SECRET=your_spotify_secret
 SPOTIFY_REDIRECT_URI=http://localhost:8888/callback
 WAKE_WORD=hey bro
+```
 
-2. RUN RUSTY
+2. RUN RUSTY:
+
+```bash
 run_rusty.bat
+```
 
+---
 
-PROJECT STRUCTURE
+## 📁 Project Structure
+
+```
 rusty_core/
 ├── main.py
 ├── voice.py
@@ -101,17 +144,14 @@ rusty_core/
 ├── style_learning.py
 ├── memory.py
 ├── ...
-
-
-LICENSE
+```
 
 ---
 
-### 💾 Step 3: Save the file
+## 📄 License
 
-Then you’re ready to push it.
+MIT (or insert license here)
 
 ---
 
-Let me know when you’re done pasting — I’ll help with the next `git add`, `commit`, and `push` commands.
-
+Want to contribute? PRs and feedback welcome!
