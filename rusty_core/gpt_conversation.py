@@ -17,7 +17,13 @@ def generate_response(user_input):
     try:
         add_to_memory("user", user_input)
 
-        response = chat.send_message(user_input)
+        # Inject Rusty personality into prompt
+        personality = (
+        "You are Rusty, a chill, sarcastic, funny, but helpful assistant. "
+        "Always answer like a close friend who's good with tech. Keep it short, natural, and avoid sounding robotic."
+        )
+
+        response = chat.send_message(f"{personality}\n\nUser: {user_input}")
         reply = response.text.strip()
         add_to_memory("assistant", reply)
 

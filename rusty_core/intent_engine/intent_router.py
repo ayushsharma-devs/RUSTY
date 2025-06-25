@@ -4,11 +4,12 @@ from app_manager.app_control import open_app, close_app, extract_app_name
 from memory import remember, recall, list_memory, recent_mention, clear_memory
 from style_learning import teach_command
 from gpt_conversation import generate_response
-
+from system_control import handle_system_command
 
 def handle_intent(intent, user_input):
     lowered = user_input.lower().strip()
-
+    if intent in ["set_volume", "battery", "mute", "unmute","screenshot", "lock", "shutdown", "sleep", "restart"]:
+        return handle_system_command(lowered)
     # --------- SPOTIFY INTENTS ----------
     if intent == "play_music":
         song_query = lowered.replace("play", "").strip()
@@ -40,20 +41,10 @@ def handle_intent(intent, user_input):
     elif intent == "resume_music":
         return sc.resume_song()
 
-    elif intent == "volume_up":
-        return sc.increase_volume()
+    elif intent == "unmute music":
+        return sc.unmute()
 
-    elif intent == "volume_down":
-        return sc.decrease_volume()
-
-    elif intent == "set_volume":
-        match = re.search(r'\b(\d+)\b', lowered)
-        if match:
-            volume = int(match.group(1))
-            return sc.set_volume(volume)
-        return "Please say a number between 0 and 100."
-
-    elif intent == "mute":
+    elif intent == "mute music":
         return sc.mute()
 
     elif intent == "shuffle":

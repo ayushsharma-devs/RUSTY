@@ -1,12 +1,12 @@
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
-import os
+
 import time
-import subprocess
+
 from app_manager.app_control import open_app
 from config import SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, SPOTIFY_REDIRECT_URI
 import random
-
+import re
 scope = "user-read-playback-state user-modify-playback-state user-read-currently-playing user-library-read"
 
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
@@ -160,28 +160,12 @@ def next_song():
         print("Skip error:", e)
         return "Couldn't skip the track."
 
-def set_volume(percent):
-    if 0 <= percent <= 100:
-        sp.volume(percent)
-        return f"Volume set to {percent}%."
-    return "Volume must be between 0 and 100."
-
-def increase_volume(step=10):
-    current = sp.current_playback()
+def unmute():
+    current=sp.current_playback()
     if current and current["device"]:
-        current_volume = current["device"]["volume_percent"]
-        new_volume = min(100, current_volume + step)
-        sp.volume(new_volume)
-        return f"Increased volume to {new_volume}%."
-    return "Could not retrieve current volume."
-
-def decrease_volume(step=10):
-    current = sp.current_playback()
-    if current and current["device"]:
-        current_volume = current["device"]["volume_percent"]
-        new_volume = max(0, current_volume - step)
-        sp.volume(new_volume)
-        return f"Decreased volume to {new_volume}%."
+        current_volume=current["device"]["volume_percent"]
+        sp.volume(current_volume)
+        return f"Unmuted audio"
     return "Could not retrieve current volume."
 
 def mute():
