@@ -77,18 +77,23 @@ def threaded_response(task):
     intent = detect_intent(personalized_input)
 
     # Intent override
+    
     if intent == "chat":
         if "what did i say about" in lowered:
             intent = "recall_recent"
+        elif "recall our chat about" in lowered or "what did we talk about" in lowered \
+            or "what did we say about" in lowered or "what was our conversation on" in lowered \
+            or "do you remember our talk about" in lowered or "our chat about" in lowered:
+            intent = "recall_episode"
         elif lowered.startswith("remember") or "remember that" in lowered:
             intent = "remember_fact"
         elif lowered.startswith("forget") or "forget what i told you about" in lowered:
             intent = "forget_fact"
         elif lowered.startswith("what is") or "what do you remember" in lowered:
             intent = "recall_fact"
-        elif "list memory" in lowered or "show memory" in lowered:
+        elif lowered.startswith("list memory") or lowered.startswith("show memory"):
             intent = "list_memory"
-        elif "clear memory" in lowered or "reset memory" in lowered:
+        elif lowered.startswith("clear memory") or lowered.startswith("reset memory"):
             intent = "clear_memory"
 
     # If task was cancelled mid-way
