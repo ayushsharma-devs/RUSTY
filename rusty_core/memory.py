@@ -7,8 +7,8 @@ from datetime import datetime
 
 # File Paths
 CONTEXT_FILE = "rusty_core/rusty_context.json"
-LONG_TERM_FILE = "rusty_core/data/long_term_memory.json"
-EPISODE_FILE = "rusty_core/data/episodic_memory.json"
+LONG_TERM_FILE = "rusty_core/long_term_memory.json"
+EPISODE_FILE = "rusty_core/episodic_memory.json"
 
 # Short-term buffer
 memory_buffer = deque(maxlen=20)
@@ -114,7 +114,23 @@ def list_memory():
             return "I don’t have anything in memory yet."
         return "\n".join([f"{k} is {v['value']}" for k, v in memory.items()])
     return "I don’t have anything in memory yet."
+#delete fact
+def delete_fact(key):
+    key = key.lower()
+    if os.path.exists(LONG_TERM_FILE):
+        with open(LONG_TERM_FILE, "r") as f:
+            memory = json.load(f)
 
+        if key in memory:
+            del memory[key]
+            with open(LONG_TERM_FILE, "w") as f:
+                json.dump(memory, f, indent=2)
+            return f"🗑️ I’ve forgotten everything about {key}."
+        else:
+            return f"I couldn’t find anything about {key} to forget."
+    return "I don’t have anything saved yet."
+
+#reset all memory
 def reset_all_memory():
     clear_memory()
     for file in [LONG_TERM_FILE, EPISODE_FILE]:

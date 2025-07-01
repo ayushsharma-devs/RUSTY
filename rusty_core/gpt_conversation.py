@@ -29,7 +29,7 @@ def generate_response(user_input):
 
         # Passive memory capture
         import re
-        from memory import remember
+        from memory import store_fact as remember
 
         match = re.search(r"my (.+?) is (.+)", user_input.lower())
         if match:
