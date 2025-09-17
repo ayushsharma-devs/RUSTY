@@ -6,6 +6,7 @@ from ctypes import POINTER, cast
 from comtypes import CLSCTX_ALL
 from pycaw.pycaw import AudioUtilities, IAudioEndpointVolume
 saved_volume_level = None
+focus_mode_state = False
 def get_volume_interface():
     devices = AudioUtilities.GetSpeakers()
     interface = devices.Activate(IAudioEndpointVolume._iid_, CLSCTX_ALL, None)
@@ -19,6 +20,25 @@ def set_system_volume(level):
     saved_volume_level = get_volume_interface()
     saved_volume_level.SetMasterVolumeLevelScalar(level, None)
 
+def set_focus_mode(enable: bool) -> str:
+    global focus_mode_state
+
+    if enable and not focus_mode_state:
+        # Run the scheduled task to toggle ON
+        subprocess.run(["schtasks", "/Run", "/TN", r"\Microsoft\Windows\Shell\FocusAssist"], shell=True)
+        focus_mode_state = True
+        return "🔕 Focus mode enabled."
+
+    elif not enable and focus_mode_state:
+        # Run the scheduled task to toggle OFF
+        subprocess.run(["schtasks", "/Run", "/TN", r"\Microsoft\Windows\Shell\FocusAssist"], shell=True)
+        focus_mode_state = False
+        return "🔔 Focus mode disabled."
+
+    else:
+        # Already in desired state
+        return "Focus mode is already " + ("on." if focus_mode_state else "off.")
+
 def handle_system_command(command):
     global saved_volume_level
     command = command.lower()
@@ -31,6 +51,9 @@ def handle_system_command(command):
             volume.SetMasterVolumeLevelScalar(scalar, None)
             return f"Volume set to {volume}%."
         return "Please say a number between 0 and 100."
+
+
+    
         
     elif "unmute" in command:
         print("unmute was called")
