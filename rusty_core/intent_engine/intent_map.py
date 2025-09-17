@@ -211,5 +211,11 @@ intent_keywords = {
     "remember this as our talk about",
     "save this as",
     "store this conversation"
-]
+],
+"remind_me": [
+    "remind me to",
+    "remind me about",
+    "remind me at",
+    "remind me",
+],
 }

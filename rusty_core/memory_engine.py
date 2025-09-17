@@ -6,9 +6,9 @@ from difflib import get_close_matches
 from datetime import datetime
 
 # File Paths
-CONTEXT_FILE = "rusty_core/rusty_context.json"
-LONG_TERM_FILE = "rusty_core/long_term_memory.json"
-EPISODE_FILE = "rusty_core/episodic_memory.json"
+CONTEXT_FILE = "context_memory.json"
+LONG_TERM_FILE = "long_term_memory.json"
+EPISODE_FILE = "episodic_memory.json"
 
 # Short-term buffer
 memory_buffer = deque(maxlen=20)

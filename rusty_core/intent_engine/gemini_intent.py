@@ -1,15 +1,14 @@
-from intent_engine.intent_map import intent_keywords
 from google.generativeai import GenerativeModel
 
 gemini = GenerativeModel("gemini-1.5-flash")
 
 def detect_intent_gemini(user_input):
-  
     prompt = f"""
-You are an intent detector for a personal assistant named Rusty.  
-Choose one of the following intents **based on the user's message**.  
+You are an intent detector for a personal assistant named Rusty.
 
-Respond with **only the intent name** in snake_case.
+Choose the correct intent based on the user's message.
+
+Respond ONLY with the intent name in snake_case. Do NOT explain.
 
 ### Intent List:
 - play_music
@@ -34,19 +33,41 @@ Respond with **only the intent name** in snake_case.
 - teach_command
 - chat
 
-### Notes:
-- If the message is **general conversation**, jokes, questions, or math → use `chat`
-- Only use `recall_fact` if the user is asking about something **they previously told me**
-- If uncertain, default to `chat`
+### Examples:
+Input: "play lofi beats"  
+Intent: play_music
 
-Input: "what is 25 times 40"  
+Input: "start my workout playlist"  
+Intent: play_playlist
+
+Input: "pause the song"  
+Intent: pause_music
+
+Input: "open discord"  
+Intent: open_app
+
+Input: "remember that my birthday is November 15"  
+Intent: remember_fact
+
+Input: "what do you remember about my birthday"  
+Intent: recall_fact
+
+Input: "what is 25 x 4?"  
+Intent: chat
+
+Input: "tell me a joke"  
+Intent: chat
+
+### Now classify this:
+Input: "{user_input}"  
 Intent:
-
 """
 
     try:
         response = gemini.generate_content(prompt)
-        intent = response.text.strip().split()[0].lower()
+        intent = response.text.strip().lower()
+        intent = intent.replace("intent:", "").strip().split()[0]
+
         return intent
     except Exception as e:
         print("Gemini intent error:", e)

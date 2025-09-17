@@ -16,6 +16,7 @@ venv.bak/
 .pypirc
 .pdm.toml
 .pdm-python
+credentials.json
 
 # ========== Audio & Model Files ==========
 *.wav

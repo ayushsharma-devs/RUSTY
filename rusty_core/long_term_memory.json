@@ -1,14 +1,8 @@
 {
-  "my name": {
-    "value": "ayush",
+  "my birthday": {
+    "value": "15 novemeber",
     "origin": "user",
-    "timestamp": "2025-06-26T23:16:01.645987",
-    "context": "user provided"
-  },
-  "my dog": {
-    "value": "rusty",
-    "origin": "user",
-    "timestamp": "2025-06-26T23:16:32.704673",
+    "timestamp": "2025-08-03T02:16:48.047483",
     "context": "user provided"
   }
 }
