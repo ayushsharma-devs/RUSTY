@@ -1,6 +1,18 @@
 intent_keywords = {
 
    # --- Spotify intents (cleaned and disambiguated) ---
+    "capability_list": [
+        "what can you do",
+        "what all can you do",
+    ],
+    "capability_demo": [
+        "yeah",
+        "yes",
+        "sure",
+        "ok",
+        "okay",
+    ],
+
 
     "play_liked": [
         "play liked songs", 
@@ -18,17 +30,12 @@ intent_keywords = {
     "play my playlist"
 ],
 
-"play_album": [
-    "play album", 
-    "play the album", 
-    "start the album"
-],
+
 
 "play_artist": [
     "play songs by", 
     "play music by", 
-    "play artist", 
-    "listen to artist"
+   
     # ❌ Removed just "artist"
 ],
 
@@ -147,7 +154,36 @@ intent_keywords = {
     "unmute",
     "unmute audio"
 ],
-
+"focus_mode":[
+    "dnd",
+    "do not disturb",
+    "do not disturb mode",
+    "activate do not disturb",
+    "activate dnd",
+    "activate dnd mode",
+    "turn on dnd",
+    "turn on do not disturb",
+    "turn on dnd mode",
+    "focus mode",
+    "focus mode activated",
+    "focus mode activated",
+    "activate focus mode",
+    "activate focus mode",
+    "turn on focus mode",
+    "turn on focus mode",
+],
+"focus_mode_off":[
+    "dnd off",
+    "do not disturb off",
+    "do not disturb mode off",
+    "deactivate do not disturb",
+    "deactivate dnd",
+    "deactivate dnd mode",
+    "focus mode off",
+    "focus mode disabled",
+    "deactivate focus mode",
+    "turn off focus mode",
+],
 
 
     #app manager intent

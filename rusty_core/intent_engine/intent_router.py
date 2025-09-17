@@ -6,10 +6,20 @@ from style_learning import teach_command
 from gpt_conversation import generate_response
 from system_control import handle_system_command
 from helper_calendar import add_event_to_calendar
+from capability_manager import CapabilityManager
+import focus_mode as fm
+cap_manager= CapabilityManager()
 def handle_intent(intent, user_input):
     lowered = user_input.lower().strip()
+    if intent == "capability_list":
+        return cap_manager.handle(user_input)
+    elif intent == "capability_demo":
+        return cap_manager.handle(user_input)
+
     if intent in ["set_volume", "battery", "mute", "unmute","screenshot", "lock", "shutdown", "sleep", "restart"]:
         return handle_system_command(lowered)
+    if intent in ["focus_mode","focus_mode_off"]:
+        return fm.toggle_focus("focus",1)
     # --------- SPOTIFY INTENTS ----------
     if intent == "play_music":
         song_query = lowered.replace("play", "").strip()
@@ -20,8 +30,6 @@ def handle_intent(intent, user_input):
     elif intent == "play_playlist":
         return sc.play_playlist_by_name(lowered.replace("play playlist", "").strip())
 
-    elif intent == "play_album":
-        return sc.play_album(lowered.replace("play album", "").strip())
 
     elif intent == "play_artist":
         return sc.play_by_artist(lowered.replace("play songs by", "").strip())

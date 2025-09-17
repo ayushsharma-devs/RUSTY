@@ -11,9 +11,11 @@ Choose the correct intent based on the user's message.
 Respond ONLY with the intent name in snake_case. Do NOT explain.
 
 ### Intent List:
+- capability_list
+- capability_demo
 - play_music
 - play_playlist
-- play_album
+- play_liked
 - play_artist
 - pause_music
 - resume_music
@@ -24,6 +26,7 @@ Respond ONLY with the intent name in snake_case. Do NOT explain.
 - set_volume
 - mute
 - shuffle
+-whats_playing
 - open_app
 - close_app
 - remember_fact
@@ -32,8 +35,21 @@ Respond ONLY with the intent name in snake_case. Do NOT explain.
 - clear_memory
 - teach_command
 - chat
+- set_volume
+- battery 
+- mute
+- unmute
+- screenshot
+- lock
+- shutdown
+- sleep
+- restart
 
 ### Examples:
+Input: "what can you do"  
+Intent: capability_list
+
+
 Input: "play lofi beats"  
 Intent: play_music
 

@@ -150,20 +150,6 @@ def play_by_artist(artist_name):
     return f"⚠️ Couldn't find artist '{artist_name}'"
 
 
-def play_album(album_name):
-    results = sp.search(q=album_name, type='album')
-    if results['albums']['items']:
-        album_uri = results['albums']['items'][0]['uri']
-
-        device_id = ensure_active_device()
-        if device_id:
-            sp.start_playback(device_id=device_id, context_uri=album_uri)
-            return f"🎵 Playing album {album_name}"
-        else:
-            return "Spotify is open, but no device is active. Try playing a song manually once."
-    return f"⚠️ Couldn't find album '{album_name}'"
-
-
 
 
 def pause_song():
