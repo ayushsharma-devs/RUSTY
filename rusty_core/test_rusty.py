@@ -5,8 +5,9 @@ import uuid
 
 from intent_engine.detect_intent import detect_intent
 from intent_engine.intent_router import handle_intent
-from memory import load_memory_context, save_memory_context, reset_all_memory
+from memory_engine import load_memory_context, save_memory_context, reset_all_memory
 from gpt_conversation import generate_response
+from intent_engine.intent_map import intent_keywords
 from style_learning import personalize_input
 
 # 🎯 Priority mapping
@@ -66,7 +67,7 @@ def threaded_response(task: PriorityTask):
     if task.should_stop.is_set():
         print(f"🛑 Task {task.user_input} cancelled mid-processing.")
         return
-
+    print(intent)
     response = handle_intent(intent, personalized_input) if intent != "chat" else generate_response(personalized_input)
 
     if task.should_stop.is_set():

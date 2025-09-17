@@ -1,11 +1,11 @@
 import re
 import spotify_control as sc
 from app_manager.app_control import open_app, close_app, extract_app_name
-from memory import  list_memory, recent_mention, clear_memory,store_fact as remember, query_fact as recall, query_episode, store_episode, delete_fact, get_memory
+from memory_engine import  list_memory, recent_mention, clear_memory,store_fact as remember, query_fact as recall, query_episode, store_episode, delete_fact, get_memory
 from style_learning import teach_command
 from gpt_conversation import generate_response
 from system_control import handle_system_command
-
+from helper_calendar import add_event_to_calendar
 def handle_intent(intent, user_input):
     lowered = user_input.lower().strip()
     if intent in ["set_volume", "battery", "mute", "unmute","screenshot", "lock", "shutdown", "sleep", "restart"]:
@@ -89,7 +89,8 @@ def handle_intent(intent, user_input):
 
     elif intent == "clear_memory":
         return clear_memory()
-
+    elif intent == "teach_command":
+        return teach_command(user_input)
     elif intent == "recall_recent":
         if "what did i say about" in lowered:
             topic = lowered.split("what did i say about", 1)[1].strip()
@@ -137,9 +138,18 @@ def handle_intent(intent, user_input):
     elif intent == "close_app":
         app_name = extract_app_name(user_input)
         return close_app(app_name) if app_name else "⚠️ Sorry, I couldn't understand which app to close."
-
+    
+    elif intent == "remind_me":
+        return add_event_to_calendar(user_input)
+    
     # --------- DEFAULT FALLBACK ----------
     elif intent == "chat":
         return generate_response(user_input)
 
     return "⚠️ I don’t know how to handle that yet."
+
+
+
+    
+
+

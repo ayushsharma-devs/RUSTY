@@ -25,8 +25,24 @@ def ensure_active_device():
         open_app("spotify")
         time.sleep(15)
         devices = sp.devices().get("devices", [])
+
     if not devices:
         return None
+
+    # Try to find desktop client first
+    desktop_device = None
+    for d in devices:
+        if d["type"] == "Computer" and d["is_active"]:
+            return d["id"]  # already active desktop
+        elif d["type"] == "Computer":
+            desktop_device = d["id"]
+
+    # If found a desktop device but not active, transfer playback
+    if desktop_device:
+        sp.transfer_playback(desktop_device, force_play=False)
+        return desktop_device
+
+    # Fallback to whatever device is active
     return devices[0]["id"]
 
 
@@ -103,11 +119,22 @@ def play_liked():
         return "Your Liked Songs list is empty."
 
     track_uris = [item['track']['uri'] for item in liked_tracks]
-
     random.shuffle(track_uris)
 
-    sp.start_playback(device_id=device_id, uris=track_uris[:100])  # 🚨 Max ~100 per call is safest
-    return f"Playing {len(track_uris)} of your liked songs."
+    # 🔑 Force transfer playback
+    sp.transfer_playback(device_id, force_play=False)
+
+    # ⏱️ Small delay to let Spotify switch sessions
+    time.sleep(1.5)
+
+    # ✅ Double-check active device
+    playback = sp.current_playback()
+    if not playback or playback["device"]["id"] != device_id:
+        return f"Failed to switch playback to desktop (still on {playback['device']['name']})."
+
+    # 🎵 Start playback
+    sp.start_playback(device_id=device_id, uris=track_uris[:100])
+    return f"Playing {len(track_uris)} of your liked songs on Desktop."
 
 def play_by_artist(artist_name):
     results = sp.search(q=f"artist:{artist_name}", type='artist')

@@ -2,7 +2,7 @@
 
 import google.generativeai as genai
 from config import GEMINI_API_KEY
-from memory import add_to_memory, get_memory
+from memory_engine import add_to_memory, get_memory
 
 # Configure API
 genai.configure(api_key=GEMINI_API_KEY)
@@ -29,7 +29,7 @@ def generate_response(user_input):
 
         # Passive memory capture
         import re
-        from memory import store_fact as remember
+        from memory_engine import store_fact as remember
 
         match = re.search(r"my (.+?) is (.+)", user_input.lower())
         if match:

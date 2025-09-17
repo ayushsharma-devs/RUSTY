@@ -136,15 +136,30 @@ run_rusty.bat
 
 ```
 rusty_core/
+├── app_manager
+          ├── app_control.py
+          ├── app_scanner.py
+          ├── installed_apps.json
 ├── main.py
-├── voice.py
-├── intent_router.py
+├── voice_engine.py
+├── intent_engine
+          ├── detect_intent.py
+          ├── gemini_intent.py
+          ├── intent_map.py
+          ├── intent_router.py
 ├── config.py
 ├── gpt_conversation.py
 ├── style_learning.py
-├── memory.py
-├── ...
-```
+├── memory
+          ├── memory.py
+          ├── episodic_memory.json
+          ├── long_term_memory.json
+          ├── rusty_context.json
+          ├── user_command_map.json
+├── system_control.py
+├── spotify_control.py
+├── helper_calendar.py
+
 
 ---
 

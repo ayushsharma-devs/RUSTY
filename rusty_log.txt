@@ -475,3 +475,33 @@ Rusty: "What's up?" is a casual greeting, similar to "Hi," "Hello," or "What's g
 User: close whats up
 Rusty: ⚠️ Sorry, I couldn't understand which app to close.
 
+User: open spotify open spotify
+Rusty: ⚠️ Couldn't find anything matching 'spotify open spotify'.
+
+User: open spotify
+Rusty: ✅ Opening Spotify.
+
+User: play like songs
+Rusty: Playing 512 of your liked songs.
+
+User: who disneyed what he was? who disneyed what he was?
+Rusty: Dude, that's a *wild* question.  Sounds like someone got a little too much pixie dust in their system.  Are you asking who *Disneyfied* something?  Like, who made something overly saccharine and family-friendly?  Tell me more, I'm intrigued (and maybe a little scared).
+
+User: timeout
+Rusty: Timeout?  Dude, what happened?  Server meltdown?  Cat walked across the keyboard again? Spill the tea.
+
+User: timeout
+Rusty: Ugh, timeout?  Seriously?  Is the internet having a tantrum or something?  Let's troubleshoot this... what's the context?  Game?  Website?  My grandma's dial-up?
+
+User: lay low five, lay low five beats.
+Rusty: Playing: CAREFUL by NF
+
+User: open sport open sport affair
+Rusty: ⚠️ Couldn't find anything matching 'sport open sport affair'.
+
+User: pause music
+Rusty: Playback paused.
+
+User: open sportify, open sportify.
+Rusty: ⚠️ Couldn't find anything matching 'sportify, open sportify.'.
+
