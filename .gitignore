@@ -18,6 +18,8 @@ venv.bak/
 .pdm-python
 credentials.json
 token.json
+token.pickle
+config.py
 # ========== Audio & Model Files ==========
 *.wav
 models/
