@@ -236,18 +236,6 @@ intent_keywords = {
         "forget everything",
         "wipe memory",
     ],
-    "recall_episode": [
-    "what happened when",
-    "what did we talk about",
-    "remind me what i said about",
-],
-
-"store_episode": [
-    "remember this conversation",
-    "remember this as our talk about",
-    "save this as",
-    "store this conversation"
-],
 "remind_me": [
     "remind me to",
     "remind me about",

@@ -1,14 +1,23 @@
 from google.generativeai import GenerativeModel
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+from config import GEMINI_INTENT_MODEL
 
-gemini = GenerativeModel("gemini-1.5-flash")
+gemini = GenerativeModel(GEMINI_INTENT_MODEL)
 
 def detect_intent_gemini(user_input):
     prompt = f"""
 You are an intent detector for a personal assistant named Rusty.
 
-Choose the correct intent based on the user's message.
+Analyze the user's message and return TWO things:
+1. The intent (what they want to do)
+2. Context keywords needed from memory (if any)
 
-Respond ONLY with the intent name in snake_case. Do NOT explain.
+Respond ONLY in this JSON format:
+{{"intent": "intent_name", "context_needed": ["keyword1", "keyword2"]}}
+
+If NO memory context is needed, use an empty array: {{"intent": "intent_name", "context_needed": []}}
 
 ### Intent List:
 - capability_list
@@ -26,7 +35,7 @@ Respond ONLY with the intent name in snake_case. Do NOT explain.
 - set_volume
 - mute
 - shuffle
--whats_playing
+- whats_playing
 - open_app
 - close_app
 - remember_fact
@@ -35,9 +44,7 @@ Respond ONLY with the intent name in snake_case. Do NOT explain.
 - clear_memory
 - teach_command
 - chat
-- set_volume
 - battery 
-- mute
 - unmute
 - screenshot
 - lock
@@ -45,46 +52,57 @@ Respond ONLY with the intent name in snake_case. Do NOT explain.
 - sleep
 - restart
 
-### Examples:
-Input: "what can you do"  
-Intent: capability_list
+### Context Keywords (use when user might need personal info):
+Use context_needed when the user asks about:
+- Their personal info: birthday, name, age, address, location, city, job, school
+- Their preferences: favorite color, food, etc.
+- Their belongings: pet names, car, etc.
 
+### Examples:
+
+Input: "what can you do"  
+Output: {{"intent": "capability_list", "context_needed": []}}
 
 Input: "play lofi beats"  
-Intent: play_music
-
-Input: "start my workout playlist"  
-Intent: play_playlist
-
-Input: "pause the song"  
-Intent: pause_music
-
-Input: "open discord"  
-Intent: open_app
+Output: {{"intent": "play_music", "context_needed": []}}
 
 Input: "remember that my birthday is November 15"  
-Intent: remember_fact
+Output: {{"intent": "remember_fact", "context_needed": []}}
 
-Input: "what do you remember about my birthday"  
-Intent: recall_fact
+Input: "what's my address?"
+Output: {{"intent": "chat", "context_needed": ["address", "location"]}}
 
-Input: "what is 25 x 4?"  
-Intent: chat
+Input: "when is my birthday?"
+Output: {{"intent": "chat", "context_needed": ["birthday"]}}
 
-Input: "tell me a joke"  
-Intent: chat
+Input: "what's the weather?"
+Output: {{"intent": "chat", "context_needed": ["address", "location", "city"]}}
+
+Input: "tell me a joke"
+Output: {{"intent": "chat", "context_needed": []}}
 
 ### Now classify this:
 Input: "{user_input}"  
-Intent:
-"""
+Output (JSON only):"""
 
     try:
         response = gemini.generate_content(prompt)
-        intent = response.text.strip().lower()
-        intent = intent.replace("intent:", "").strip().split()[0]
-
-        return intent
+        result = response.text.strip()
+        
+        # Clean up the response to extract JSON
+        if "```json" in result:
+            result = result.split("```json")[1].split("```")[0].strip()
+        elif "```" in result:
+            result = result.split("```")[1].split("```")[0].strip()
+        
+        import json as json_module
+        data = json_module.loads(result)
+        
+        return {
+            "intent": data.get("intent", "chat").lower().strip(),
+            "context_needed": data.get("context_needed", [])
+        }
+        
     except Exception as e:
-        print("Gemini intent error:", e)
-        return "chat"
+        print(f"Gemini intent error: {e}")
+        return {"intent": "chat", "context_needed": []}

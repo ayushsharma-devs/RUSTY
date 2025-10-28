@@ -1,7 +1,7 @@
 import re
 import spotify_control as sc
 from app_manager.app_control import open_app, close_app, extract_app_name
-from memory_engine import  list_memory, recent_mention, clear_memory,store_fact as remember, query_fact as recall, query_episode, store_episode, delete_fact, get_memory
+from memory_engine import list_memory, recent_mention, clear_memory, store_fact as remember, query_fact as recall, delete_fact, get_memory
 from style_learning import teach_command
 from gpt_conversation import generate_response
 from system_control import handle_system_command
@@ -69,7 +69,8 @@ def handle_intent(intent, user_input):
             key = match.group(1).strip()
             value = match.group(2).strip()
             return remember(key, value)
-        return "Please say something like 'remember my birthday is June 1st'."
+        # Fallback to AI-powered fact extraction for flexible patterns
+        return generate_response(user_input)
 
     elif intent == "recall_fact":
         if any(char.isdigit() for char in lowered) and "what is" in lowered:
@@ -113,30 +114,6 @@ def handle_intent(intent, user_input):
             response = recent_mention(topic)
             return f"You were saying: '{response}'" if response else f"I don’t recall what you said about {topic}."
         return "Try saying something like 'what did I say about football?'"
-
-# --- Episodic Memory ---
-
-    elif intent == "recall_episode":
-        topic = ""
-        for phrase in ["what happened when", "what did we talk about", "remind me what i said about"]:
-            if phrase in lowered:
-                topic = lowered.split(phrase)[-1].strip()
-                break
-        return query_episode(topic) if topic else "Try saying something like 'what happened when we talked about the gym?'"
-
-    elif intent == "store_episode":
-        match = re.search(r"(?:remember|store) (?:this )?(?:conversation|chat|as)?(?: our )?(?:talk|chat|conversation)?(?: about)? (.+)", lowered)
-        if match:
-            topic = match.group(1).strip()
-            context = get_memory()
-            if len(context) >= 2:
-                user_line = context[-2]["parts"][0]
-                assistant_line = context[-1]["parts"][0]
-                store_episode(topic, user_line, assistant_line)
-                return f"Stored this as our talk about '{topic}'."
-            else:
-                return "Not enough context to save a conversation."
-        return "Say something like 'remember this as our chat about productivity'."
 
     # --------- APP CONTROL ----------
     elif intent == "open_app":
