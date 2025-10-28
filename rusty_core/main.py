@@ -74,17 +74,22 @@ def threaded_response(task):
 
     personalized_input = personalize_input(user_input)
     lowered = personalized_input.lower()
-    intent = detect_intent(personalized_input)
+    intent_data = detect_intent(personalized_input)
+    
+    # Extract intent and context keywords
+    if isinstance(intent_data, dict):
+        intent = intent_data.get("intent", "chat")
+        context_keywords = intent_data.get("context_needed", [])
+    else:
+        # Backwards compatibility
+        intent = intent_data
+        context_keywords = []
 
     # Intent override
     
     if intent == "chat":
         if "what did i say about" in lowered:
             intent = "recall_recent"
-        elif "recall our chat about" in lowered or "what did we talk about" in lowered \
-            or "what did we say about" in lowered or "what was our conversation on" in lowered \
-            or "do you remember our talk about" in lowered or "our chat about" in lowered:
-            intent = "recall_episode"
         elif lowered.startswith("remember") or "remember that" in lowered:
             intent = "remember_fact"
         elif lowered.startswith("forget") or "forget what i told you about" in lowered:
@@ -101,8 +106,8 @@ def threaded_response(task):
         print(f"🛑 Task {task.id} was cancelled before execution.")
         return
 
-    # 🔁 Main response logic
-    response = handle_intent(intent, personalized_input) if intent != "chat" else generate_response(personalized_input)
+    # 🔁 Main response logic - pass context keywords to generate_response for chat intent
+    response = handle_intent(intent, personalized_input) if intent != "chat" else generate_response(personalized_input, context_keywords)
 
     if task.should_stop.is_set():
         print(f"🛑 Task {task.id} was cancelled before speaking.")
@@ -154,7 +159,9 @@ def run_assistant():
             continue
 
         # Assign priority
-        intent = detect_intent(personalize_input(user_input))
+        intent_data = detect_intent(personalize_input(user_input))
+        # Extract intent from dict
+        intent = intent_data.get("intent", "chat") if isinstance(intent_data, dict) else intent_data
         priority = INTENT_PRIORITY.get(intent, 1)
 
         task = PriorityTask(priority, user_input)

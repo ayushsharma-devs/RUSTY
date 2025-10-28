@@ -1,10 +1,8 @@
 import google.generativeai as genai
-from dotenv import load_dotenv
-import os
+from config import GEMINI_API_KEY, GEMINI_MODEL
 
-load_dotenv()
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+genai.configure(api_key=GEMINI_API_KEY)
 
-model = genai.GenerativeModel("gemini-1.5-flash")
+model = genai.GenerativeModel(GEMINI_MODEL)
 response = model.generate_content("What is the capital of Spain?")
 print(response.text)

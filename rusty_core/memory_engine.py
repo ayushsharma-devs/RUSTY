@@ -8,7 +8,6 @@ from datetime import datetime
 # File Paths
 CONTEXT_FILE = "context_memory.json"
 LONG_TERM_FILE = "long_term_memory.json"
-EPISODE_FILE = "episodic_memory.json"
 
 # Short-term buffer
 memory_buffer = deque(maxlen=20)
@@ -133,38 +132,125 @@ def delete_fact(key):
 #reset all memory
 def reset_all_memory():
     clear_memory()
-    for file in [LONG_TERM_FILE, EPISODE_FILE]:
-        if os.path.exists(file):
-            with open(file, "w") as f:
-                json.dump({}, f)
+    if os.path.exists(LONG_TERM_FILE):
+        with open(LONG_TERM_FILE, "w") as f:
+            json.dump({}, f)
     return "🧹 All memory — short-term and long-term — has been cleared."
 
-# ---------- Episodic Memory ----------
+# ---------- AI-Powered Long-Term Memory ----------
 
-def store_episode(topic, user_line, assistant_line, tags=[]):
-    episode = {
-        "topic": topic,
-        "user": user_line,
-        "assistant": assistant_line,
-        "timestamp": datetime.now().isoformat(),
-        "tags": tags
-    }
+def extract_facts_ai(user_input):
+    """Use Gemini to intelligently detect if user_input contains memorable facts"""
+    try:
+        from google.generativeai import GenerativeModel
+        from config import GEMINI_API_KEY, GEMINI_INTENT_MODEL
+        import google.generativeai as genai
+        
+        genai.configure(api_key=GEMINI_API_KEY)
+        model = GenerativeModel(GEMINI_INTENT_MODEL)
+        
+        prompt = f"""
+You are a fact extraction AI. Analyze the user's message and determine if it contains personal information worth storing long-term.
 
-    data = []
-    if os.path.exists(EPISODE_FILE):
-        with open(EPISODE_FILE, "r") as f:
-            data = json.load(f)
+Storable facts include:
+- Birthday, age
+- Name (user's or their pets/family)
+- Location, address, city, country
+- Job, occupation, school
+- Preferences (favorite food, color, etc.)
+- Important dates or events
+- Contact information
 
-    data.append(episode)
-    with open(EPISODE_FILE, "w") as f:
-        json.dump(data, f, indent=2)
+If the message contains storable facts, respond ONLY in this JSON format:
+{{"facts": [{{"key": "birthday", "value": "November 15"}}, {{"key": "city", "value": "Bhubaneswar"}}]}}
 
-def query_episode(topic):
-    topic = topic.lower()
-    if os.path.exists(EPISODE_FILE):
-        with open(EPISODE_FILE, "r") as f:
-            episodes = json.load(f)
-        results = [ep for ep in episodes if topic in ep["topic"].lower() or topic in ep.get("user", "")]
-        if results:
-            return "\n".join([f"You: {r['user']}\nMe: {r['assistant']}" for r in results[-3:]])
-    return "I don’t remember discussing that before."
+If NO storable facts are found, respond ONLY with:
+{{"facts": []}}
+
+User message: "{user_input}"
+
+Response (JSON only):"""
+
+        response = model.generate_content(prompt)
+        result = response.text.strip()
+        
+        # Clean up the response to extract JSON
+        if "```json" in result:
+            result = result.split("```json")[1].split("```")[0].strip()
+        elif "```" in result:
+            result = result.split("```")[1].split("```")[0].strip()
+        
+        import json as json_module
+        data = json_module.loads(result)
+        return data.get("facts", [])
+        
+    except Exception as e:
+        print(f"⚠️ Fact extraction error: {e}")
+        return []
+
+def auto_store_facts(user_input):
+    """Automatically detect and store facts from user input"""
+    facts = extract_facts_ai(user_input)
+    stored = []
+    
+    for fact in facts:
+        key = fact.get("key", "").lower().strip()
+        value = fact.get("value", "").strip()
+        
+        if key and value:
+            store_fact(key, value, context=f"extracted from: {user_input[:50]}...")
+            stored.append(f"{key}: {value}")
+    
+    if stored:
+        return f"🧠 Remembered: {', '.join(stored)}"
+    return None
+
+def get_relevant_facts(user_input, context_keywords=None):
+    """
+    Retrieve relevant facts from long-term memory based on context keywords.
+    
+    Args:
+        user_input: The user's message (fallback if no keywords)
+        context_keywords: List of keywords to search for (e.g., ["address", "birthday"])
+    
+    Returns:
+        Formatted string with relevant facts or empty string
+    """
+    if not os.path.exists(LONG_TERM_FILE):
+        return ""
+    
+    try:
+        with open(LONG_TERM_FILE, "r") as f:
+            memory = json.load(f)
+        
+        if not memory:
+            return ""
+        
+        relevant = []
+        
+        # If we have specific keywords from intent detection, use those
+        if context_keywords:
+            for keyword in context_keywords:
+                keyword_lower = keyword.lower()
+                for key, data in memory.items():
+                    # Check if keyword matches any part of the memory key
+                    if keyword_lower in key.lower():
+                        relevant.append(f"{key}: {data['value']}")
+        else:
+            # Fallback to simple keyword matching from user input
+            user_lower = user_input.lower()
+            for key, data in memory.items():
+                # Check if any word in the key appears in the user input
+                if any(word in user_lower for word in key.split()):
+                    relevant.append(f"{key}: {data['value']}")
+        
+        if relevant:
+            # Remove duplicates while preserving order
+            relevant = list(dict.fromkeys(relevant))
+            return "### Relevant facts from long-term memory:\n" + "\n".join(relevant)
+        
+        return ""
+        
+    except Exception as e:
+        print(f"⚠️ Error retrieving facts: {e}")
+        return ""

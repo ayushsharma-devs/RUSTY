@@ -50,6 +50,10 @@ share/python-wheels/
 *.egg
 MANIFEST
 
+*.pdf
+*.json
+*.docx
+
 # ========== Installer Files ==========
 pip-log.txt
 pip-delete-this-directory.txt
@@ -113,3 +117,4 @@ __pypackages__/
 cython_debug/
 .cursorignore
 .cursorindexingignore
+rusty system prompt.txt

@@ -16,7 +16,7 @@ def toggle_focus(mode="focus", duration=None):
         # Turn OFF
         FOCUS_STATE = {"enabled": False, "end_time": None, "mode": None}
         # Add system hooks here (unmute sounds, clear status, etc.)
-        sp.play_music("https://open.spotify.com/playlist/37i9dQZF1DX7EF8wVxBVhG?si=0289f7c047004582")
+        sp.play_song("https://open.spotify.com/playlist/37i9dQZF1DX7EF8wVxBVhG?si=0289f7c047004582")
         
         return f"🟢 Focus mode disabled."
     else:
@@ -27,6 +27,8 @@ def toggle_focus(mode="focus", duration=None):
             FOCUS_STATE["end_time"] = time.time() + duration * 60
             threading.Thread(target=_auto_disable, daemon=True).start()
         # Add system hooks here (mute sounds, pause notifications, play playlist, etc.)
+        print("Playing focus beats")
+        sp.play_playlist_by_name("Binaural beat: Focus")
         return f"🔴 {mode.title()} mode enabled{' for ' + str(duration) + ' minutes' if duration else ''}."
 
 # Auto turn-off after duration
